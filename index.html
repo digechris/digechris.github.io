@@ -274,6 +274,24 @@
       </div>
     </div>
   </header>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+  <script>
+    var carousel = document.querySelector('.hero-slider');
+    var flkty = new Flickity(carousel, {
+      autoPlay: 3500,
+      wrapAround: true,
+    });
+
+    flkty.on('select', function(index) {
+    if (index === 0) {
+      // First slide
+      flkty.options.autoPlay = 3500; // Initial transition speed
+    } else {
+      // After first slide
+      flkty.options.autoPlay = 3500; // Transition speed after first slide
+    }
+  });
+  </script></script>
 
   <!-- Divider -->
   <div class="divider">
@@ -293,10 +311,10 @@
         My ServiceNow Experience
       </p>
     </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">IT Support</button>
+    <button class="collapsible-button" onclick="collapsibleShow()">IT ServiceDesk</button>
     <div class="collapsible-content">
       <p>
-        My IT Support Experience
+        My IT ServiceDesk Experience
       </p>
     </div>
     <button class="collapsible-button" onclick="collapsibleShow()">Asset Management</button>
@@ -331,7 +349,7 @@
         <br></br>
       </p>
     </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">Javascript/HTML/CSS</button>
+    <button class="collapsible-button" onclick="collapsibleShow()">M3 Software Development</button>
     <div class="collapsible-content">
       <p>
         <br>
@@ -376,6 +394,12 @@
           <img src="./assets/images/codeforother.png"></img>
         </center>
         <br></br>
+    </div>
+    <button class="collapsible-button" onclick="collapsibleShow()">Overall Reflection</button>
+    <div class="collapsible-content">
+      <p>
+        INFO
+      </p>
     </div>
   </section>
   </p>
