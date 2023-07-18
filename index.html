@@ -319,7 +319,7 @@
       flkty.options.autoPlay = 3500; // Transition speed after first slide
     }
   });
-  </script></script>
+  </script>
 
   <!-- Divider -->
   <div class="divider">
@@ -332,6 +332,137 @@
     <span></span>
   </div>
 
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+   
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #00573b;
+  text-decoration: none;
+}
+
+/* Accordian Main */
+h1 {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1 a {
+  color: #00573b;
+  font-size: 16px;
+}
+
+.accordion {
+  margin: 0 auto; /* Add this line */
+  max-width: 900px; /* Add this line */
+}
+
+.accordion .link {
+  display: flex;
+  align-items: center;
+  padding: 15px 42px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.accordion .link img {
+  margin-right: 10px;
+}
+
+.accordion .link > div {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.accordion .link p {
+  margin: 0;
+  text-align: center;
+}
+
+.accordion li i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  font-size: 16px;
+  color: #1a1a1a;
+  transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+  border-bottom: 0;
+}
+
+.accordion li i.fa-chevron-down {
+  /* right: auto; */
+  font-size: 16px;
+}
+
+.accordion li.open .link {
+  color: #00573b;
+}
+
+.accordion li.open i {
+  color: #00573b;
+}
+
+.accordion li.open i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Submenu */
+
+  
+    .accordion-container {
+      width: 50%;
+      max-width: 400px;
+    }
+  
+    .submenu {
+  position: relative;
+  text-align: center;
+  display: none;
+  background: white;
+  font-size: 13px;
+  padding: 3% 0 2% 0;
+  max-width: 100%
+}
+
+.submenu li {
+  border-bottom: 1px solid #4b4a5e;
+  text-align: center;
+}
+
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+  padding: 12px;
+  padding-left: 42px;
+  transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+  background: #00573b;
+  color: #FFF;
+}
+
+  </style>
 
 <script>
 // Accordian
@@ -361,9 +492,10 @@ $(function() {
 });
 
 </script>
-<!-- Accordion -->
-<div class="vmob">
-  <ul id="accordion" class="accordion">
+<div class="container">
+  <div class="accordion-container"
+    <div class="vmob">
+      <ul id="accordion" class="accordion">
     <li>
       <div class="link">
         <img width="65" src="./assets/images/logos/icons8-help-chat-68.png">
@@ -420,8 +552,9 @@ $(function() {
     </li>
   </ul>
 </div>
-
-
+</div>
+</div>
+</div>
 
     <footer>
       <div class="footer-content">
