@@ -16,6 +16,7 @@
   <!-- Add the JavaScript file -->
   <script type="text/javascript" src="./scripts/script.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <style>
     /*Hero Slider*/
@@ -78,12 +79,13 @@
 
     .carousel-cell .title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       text-shadow: 5px 5px 10px black;
       line-height: 1.2em;
       text-transform: uppercase;
       letter-spacing: 3px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      filter: brightness(100%);
     }
 
     .carousel-cell .btn {
@@ -92,11 +94,12 @@
       text-transform: uppercase;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8rem;
+      font-weight: 700;
+      filter: brightness(100%);
       text-shadow: 4px 4px 8px black;
       letter-spacing: 3px;
       color: #fff;
       backdrop-filter: blur(0.5px);
-      text-decoration: none;
       transition: all 0.2s ease;
     }
 
@@ -104,7 +107,7 @@
       background: #00573b;
       color: #ffffff;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       text-shadow: 20px 20px 40px black;
     }
 
@@ -329,39 +332,97 @@
     <span></span>
   </div>
 
-  <section class="collapsible">
-    <button class="collapsible-button" onclick="collapsibleShow()">ServiceNow</button>
-    <div class="collapsible-content">
-      <p>
-        My ServiceNow Experience
-      </p>
-    </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">IT ServiceDesk</button>
-    <div class="collapsible-content">
-      <p>
-        My IT ServiceDesk Experience
-      </p>
-    </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">Asset Management</button>
-    <div class="collapsible-content">
-      <p>
-      Input here 
-      </p>
-    </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">M3 Software Development</button>
-    <div class="collapsible-content">
-      <p>
-      Input here
-      </p>
-    </div>
-    <button class="collapsible-button" onclick="collapsibleShow()">Overall Reflection</button>
-    <div class="collapsible-content">
-      <p>
-        INFO
-      </p>
-    </div>
-  </section>
-  </p>
+
+<script>
+// Accordian
+$(function() {
+  var Accordion = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
+
+    var links = this.el.find('.link');
+    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
+  };
+
+  Accordion.prototype.dropdown = function(e) {
+    var $el = e.data.el;
+    $this = $(this),
+      $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    if (!e.data.multiple) {
+      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+    }
+  };
+
+  var accordion = new Accordion($('#accordion'), false);
+});
+
+</script>
+<!-- Accordion -->
+<div class="vmob">
+  <ul id="accordion" class="accordion">
+    <li>
+      <div class="link">
+        <img width="65" src="./assets/images/logos/icons8-help-chat-68.png">
+        <p>ServiceNow</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>My ServiceNow Experience. Lorem ipsum dolor sit amet. Sit fugiat deleniti aut sunt accusamus et distinctio aliquam sed quia suscipit est officiis sequi. Aut explicabo nihil est similique dignissimos a unde itaque et quia omnis sit placeat autem a repellat alias quo quos sint. 33 tempore molestiae aut architecto sunt quo itaque nobis ut excepturi numquam eum tempore ipsa est adipisci expedita 33 tempore quibusdam? Ab repudiandae debitis hic quisquam consequatur est nemo itaque eum quia quasi a necessitatibus praesentium a facere excepturi et sunt perferendis.
+
+          Id possimus delectus et vero possimus sed laborum dolor non dolorum assumenda qui accusamus quia et amet dolor ex deleniti velit! Ut porro debitis nam cupiditate galisum et eaque obcaecati quo autem autem aut iste quia ut quas quia. Non ullam nihil id sapiente perspiciatis et tempora voluptatibus ex fugiat excepturi qui odit debitis 33 officiis natus et modi ducimus.
+          
+          Eum delectus distinctio At dolor laudantium ad totam iusto et odio quaerat ea blanditiis expedita 33 corrupti obcaecati. Hic ipsa enim et quam dignissimos aut perspiciatis modi aut culpa perspiciatis id temporibus alias.</p>
+      </ul>
+    </li>
+    <li>
+      <div class="link">
+        <img width="65" src="./assets/images/logos/icons8-computer-support-64.png">
+        <p>IT ServiceDesk</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>My IT ServiceDesk Experience</p>
+      </ul>
+    </li>
+    <li>
+      <div class="link">
+        <img width="65" src="./assets/images/logos/icons8-technology-100.png">
+        <p>Asset Management</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>Input here</p>
+      </ul>
+    </li>
+    <li>
+      <div class="link">
+        <img width="65" src="./assets/images/logos/icons8-software-65.png">
+        <p>M3 Software Development</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>Input here</p>
+      </ul>
+    </li>
+    <li>
+      <div class="link">
+        <img width="65" src="./assets/images/logos/icons8-think-100.png">
+        <p>Overall Reflection</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>INFO</p>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
     <footer>
       <div class="footer-content">
         <h3>Oldcastle APG</h3>
