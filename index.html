@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./assets/images/logotransparent31.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
   <!-- Add the JavaScript file -->
   <script type="text/javascript" src="./scripts/script.js"></script>
@@ -44,7 +44,7 @@
 
     .hero-slider {
       width: 100%;
-      height: 50vh;
+      height: 45vh;
       overflow: hidden;
       position: relative;
     }
@@ -79,7 +79,7 @@
     .carousel-cell .title {
       font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
-      text-shadow: 4px 4px 8px black;
+      text-shadow: 5px 5px 10px black;
       line-height: 1.2em;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -103,6 +103,9 @@
     .carousel-cell .btn:hover {
       background: #00573b;
       color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      text-shadow: 20px 20px 40px black;
     }
 
     /* Custom styles for Flickity carousel arrows */
@@ -128,6 +131,7 @@
 
     .flickity-prev-next-button:hover svg {
       fill: #00573b;
+      transition: fill 1s;
     }
 
     .flickity-prev-next-button .arrow-circle {
@@ -230,7 +234,7 @@
 
       <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href="./index.html">
-          <img src="./assets/images/attemp102.png" width="120" height="120" class="rounded-circle"
+          <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
             style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
@@ -252,42 +256,42 @@
     </div>
     <div class="hero-slider" data-flickity='{ "autoPlay": 2000, "wrapAround": true }'>
       <div class="carousel-cell"
-        style="background-image:url(./assets/images/internshipphotos/testinternshippic3.png);">
+        style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic3.png);">
         <div class="inner">
           <h2 class="title">My Internship</h2>
           <a href="./index.html" target="_blank" class="btn">Tell me more</a>
         </div>
       </div>
       <div class="carousel-cell"
-        style="background-image:url(./assets/images/internshipphotos/testinternshippic2.png);">
+        style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic2.png);">
         <div class="inner">
           <h2 class="title">My Internship</h2>
           <a href="./index.html" target="_blank" class="btn">Tell me more</a>
         </div>
       </div>
       <div class="carousel-cell"
-        style="background-image:url(./assets/images/internshipphotos/testinternshippic5.jpg);">
+        style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic5.jpg);">
         <div class="inner">
           <h2 class="title">My Internship</h2>
           <a href="./index.html" target="_blank" class="btn">Tell me more</a>
         </div>
       </div>
       <div class="carousel-cell"
-      style="background-image:url(./assets/images/internshipphotos/testinternshippic1.jpg);">
+      style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic1.jpg);">
       <div class="inner">
         <h2 class="title">My Internship</h2>
         <a href="./index.html" target="_blank" class="btn">Tell me more</a>
       </div>
     </div>
     <div class="carousel-cell"
-    style="background-image:url(./assets/images/internshipphotos/testinternshippic4.png);">
+    style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic4.png);">
     <div class="inner">
       <h2 class="title">My Internship</h2>
       <a href="./index.html" target="_blank" class="btn">Tell me more</a>
     </div>
   </div>
   <div class="carousel-cell"
-  style="background-image:url(./assets/images/internshipphotos/testinternshippic6.png);">
+  style="background-image:url(./assets/images/resizedtransition/internshipphotos/internshippic6.png);">
   <div class="inner">
     <h2 class="title">My Internship</h2>
     <a href="./index.html" target="_blank" class="btn">Tell me more</a>
@@ -319,7 +323,7 @@
     <span></span>
     <span>
       <div class="logo">
-        <img src="./assets/images/logo-transparent-png.png" width="75" height="75">
+        <img src="./assets/images/logos/chrisinternshiplogo.png" width="75" height="75">
       </div>
     </span>
     <span></span>
@@ -341,80 +345,14 @@
     <button class="collapsible-button" onclick="collapsibleShow()">Asset Management</button>
     <div class="collapsible-content">
       <p>
-        <br>
-        Whenever I was not working with Adham, I would work on Matt's team on Asset Management. The goal of asset
-        management was the tracking of all of Oldcastle APG's hardware. The main goal at the moment was to track the
-        laptops. We would go through and verify SCCM data and match it up with the user and transfer this information
-        over to the new procurement sheet.
-        <br></br>
-        <center>
-          <b>
-            <h>This may seem simple, but up until now there have been a <u>large portion of errors.</u><br> Once
-              everything was confirmed, I would input tags into SNOW and assign a new hardware asset (Make, Model, etc)
-              to that specific user. (Assigned to, Location, etc).</h>
-          </b>
-          <br></br>
-          Glimpse of Procurement Sheet:
-          <br>
-          <img src="./assets/images/procurementsheet.png"></img>
-          <br></br>
-          SCCM data dump:
-          <br>
-          <img src="./assets/images/sccmdata.png"></img>
-          <br></br>
-          SNOW Inputs:
-          <br>
-          <img src="./assets/images/snowinputs.png"></img>
-          <br>
-        </center>
-        <br></br>
+      Input here 
       </p>
     </div>
     <button class="collapsible-button" onclick="collapsibleShow()">M3 Software Development</button>
     <div class="collapsible-content">
       <p>
-        <br>
-        To start, I had a solid understanding of HTML/CSS but limited understanding of Javascript. These languages
-        consist of a large portion of what is used in our M3 software. I had to take a beginner developer course to get
-        up to speed on Javascript which I did through Codecademy. During this course Adham had given me a simple test
-        script to complete which was an email, username login. This was completed and then we moved forward with our plan
-        to create this website to document my internship and display my knowledge of these programming languages. Along
-        with this website, Adham would send me tasks that he was assigned during his weekly meetings to complete.
-        <br></br>
-        <h>
-          <b>
-            <center>
-              The goal here was to <u>maintain the functionality</u> but provide a clearer view of what the user is
-              inputting and what it is displaying.
-          </b>
-          <br></br>
-          <b>One example:</b>
-          <br></br>
-          Display
-          <br>
-          Left old, right new.
-          <br>
-          <img src="./assets/images/displayfortwoexample.png"></img>
-          <br></br>
-          Code:
-          <br>
-          <img src="./assets/images/codefortwoexample.png"></img>
-          <br></br>
-          <b>Another example:</b>
-          <br></br>
-          Old popup:
-          <br>
-          <img src="./assets/images/oldpopup.png"></img>
-          <br></br>
-          New popup:
-          <br>
-          <img src="./assets/images/newpopup.png"></img>
-          <br></br>
-          Code:
-          <br>
-          <img src="./assets/images/codeforother.png"></img>
-        </center>
-        <br></br>
+      Input here
+      </p>
     </div>
     <button class="collapsible-button" onclick="collapsibleShow()">Overall Reflection</button>
     <div class="collapsible-content">

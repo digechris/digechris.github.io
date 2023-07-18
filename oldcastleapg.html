@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./assets/images/logotransparent31.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
   <!-- Add the JavaScript file -->
   <script type = "text/javascript" src="./scripts/script.js"></script>
@@ -43,7 +43,7 @@
 
     .hero-slider {
       width: 100%;
-      height: 50vh;
+      height: 45vh;
       overflow: hidden;
       position: relative;
     }
@@ -76,7 +76,7 @@
         .title {
           font-family: 'Montserrat', sans-serif;
           font-size: 3rem;
-          text-shadow: 4px 4px 8px black;
+          text-shadow: 5px 5px 10px black;
           line-height: 1.2em;
           text-transform: uppercase;
           letter-spacing: 3px;
@@ -88,17 +88,20 @@
           padding: 14px 18px;
           text-transform: uppercase;
           font-family: 'Montserrat', sans-serif;
-          text-shadow: 4px 4px 8px black;
           font-size: 0.8rem;
+          text-shadow: 5px 5px 10px black;
           letter-spacing: 3px;
           color: #fff;
-          backdrop-filter: blur(0.5px);
+          backdrop-filter: blur(0.2px);
           text-decoration: none;
           transition: all 0.2s ease;
 
           &:hover {
             background: #00573b;
             color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            text-shadow: 20px 20px 40px black;
           }
         }
       }
@@ -126,6 +129,7 @@
 
 .flickity-prev-next-button:hover svg {
   fill: #00573b;
+  transition: fill 1s;
 }
 
 .flickity-prev-next-button .arrow-circle {
@@ -232,7 +236,7 @@
         </div>
         <div class="mx-auto my-2 order-0 order-md-1 position-relative">
           <a class="mx-auto" href="./index.html">
-            <img src="./assets/images/attemp102.png" width="120" height="120" class="rounded-circle" style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
+            <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle" style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
@@ -255,7 +259,7 @@
       <div class="arrow-bottom"></div>
     </div>
     <div class="hero-slider" data-flickity='{ "autoPlay": 2000, "wrapAround": true }'>
-      <div class="carousel-cell" style="background-image:url(./assets/images/resizedtransition/oldcastleheroslider/possibleherobanner.jpg);">
+      <div class="carousel-cell" style="background-image:url(./assets/images/resizedtransition/oldcastleheroslider/oldcastledesignbanner.jpg);">
         <div class="inner">
           <h2 class="title">Oldcastle APG</h2>
           <a href="./index.html" target="_blank" class="btn">Tell me more</a>
@@ -268,6 +272,12 @@
         </div>
       </div>
       <div class="carousel-cell" style="background-image:url(./assets/images/resizedtransition/oldcastleheroslider/ephenrybanner.png);">
+        <div class="inner">
+          <h2 class="title">Oldcastle APG</h2>
+          <a href="./index.html" target="_blank" class="btn">Tell me more</a>
+        </div>
+      </div>
+      <div class="carousel-cell" style="background-image:url(./assets/images/resizedtransition/oldcastleheroslider/riverbankbanner.jpg);">
         <div class="inner">
           <h2 class="title">Oldcastle APG</h2>
           <a href="./index.html" target="_blank" class="btn">Tell me more</a>
@@ -300,10 +310,12 @@
   
   
 <!-- Divider -->
-<div class="divider"><span></span><span><div class="logo"><img src="./assets/images/replacementlogo.png" width="75" height="75"></div></span><span></span></div>
-
-
-
+<div class="divider"><span></span><span><div class="logo"><img src="./assets/images/logos/favicon.png" width="75" height="75"></div></span><span></span></div>
+<!--
+<div class="logo">We may own the backyard. But so can you.
+have to put something here
+Products & Services
+</div>-->
   <footer>
     <div class="footer-content">
       <h3>Oldcastle APG</h3>
