@@ -1,3 +1,48 @@
+/* Navbar */
+.custom-navbar {
+  background-image: url(/digechris.github.io/assets/images/navbarbackground-RyJOAXi9O-transformed.jpeg);
+  position: relative;
+  z-index: 1;
+}
+
+.custom-navbar .nav-link {
+  position: relative;
+  color: white;
+  text-shadow: 4px 4px 8px black;
+}
+
+.custom-navbar .nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover::before,
+.custom-navbar .nav-link.active::before {
+  visibility: visible;
+  transform: scaleX(0.80);
+  transition-delay: 0s;
+}
+
+.custom-navbar .nav-link.active::before {
+  transition-delay: 0.2s;
+}
+
+.circle-image {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
 .navbar-nav.mr-auto {
   margin-right: auto;
 }
@@ -6,19 +51,155 @@
   margin-left: auto;
 }
 
-.logo {
-  font-size: 32px;
-  font-family: 'Great Vibes', cursive;
-  filter: brightness(150%);
-  position: relative;
-}
+    /*Hero Slider*/
+    
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+    }
+/* 
+    body {
+      background-color: #ffffff;
+    } */
 
-.sublogo {
-  font-size: 32px;
-  font-family: 'Forum', cursive;
-  filter: brightness(150%);
-  position: relative; /* Add this line */
-}
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, transparentize(#0E1D33, 0.2), transparentize(#0E1D33, 0.8));
+    }
+
+    .hero-slider {
+      width: 100%;
+      height: 45vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-cell {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-cell .inner {
+      position: relative;
+      top: 45%;
+      transform: translateY(-50%);
+      color: white;
+      text-align: center;
+    }
+
+    .carousel-cell .subtitle {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.2rem;
+      line-height: 1.2em;
+      font-weight: 200;
+      font-style: italic;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 5px;
+    }
+
+    .carousel-cell .title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      text-shadow: 5px 5px 10px black;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      filter: brightness(100%);
+    }
+
+    .carousel-cell .btn {
+      border: 1px solid #fff;
+      padding: 14px 18px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      filter: brightness(100%);
+      text-shadow: 4px 4px 8px black;
+      letter-spacing: 3px;
+      color: #fff;
+      backdrop-filter: blur(0.5px);
+      transition: all 0.2s ease;
+    }
+
+    .carousel-cell .btn:hover {
+      background: #00573b;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      text-shadow: 20px 20px 40px black;
+    }
+
+    /* Custom styles for Flickity carousel arrows */
+/* 
+    .flickity-prev-next-button {
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+     */
+    /* .flickity-prev-next-button:hover {
+      opacity: 1;
+    }
+     */
+  .flickity-prev-next-button svg {
+      fill: rgb(255, 255, 255);
+      width: 60px;
+      height: 60px;
+      transition: fill 0.7s;
+    } 
+
+    .flickity-prev-next-button:hover svg {
+      fill: #00573b;
+      transition: fill 1s;
+    } 
+    
+    .flickity-prev-next-button .arrow-circle {
+      fill: #fff;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    
+    .flickity-prev-next-button:hover .arrow-circle {
+      opacity: 1;
+    }
+    
+
+    .flickity-page-dots {
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .flickity-page-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #00573b;
+      margin: 0 5px;
+    }
+
+    .flickity-page-dots .dot.is-selected {
+      background: #00573b;
+      border-color: #000;
+    }
 
   /* Footer */
   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
@@ -37,7 +218,6 @@
     background-image: url(/digechris.github.io/assets/images/navbarbackground-RyJOAXi9O-transformed.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
     width: 100%;
     padding-top: 40px;
     color: #fff;
@@ -192,64 +372,3 @@
               background-image: -o-linear-gradient(180deg, #00573b, transparent);
               background-image: linear-gradient(90deg, #00573b, transparent);
           }
-  
-  /*Collapsible
-  .collapsible-button {
-            background-color: #ffffff;
-            color: #00573b;
-            position: relative;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-family: 'Quicksand', sans-serif;
-            cursor: pointer;
-            width: 100%;
-            border: none;
-            text-align: center;
-            outline: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-          }
-        
-          .collapsible-button::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: transparent;
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
-          }
-        
-          .collapsible-button:hover,
-          .collapsible-button.active {
-            background-color: rgba(0, 87, 59, 0.2);
-            box-shadow: 0 0 5px rgba(0, 87, 59, 0.2);
-          }
-        
-          .collapsible-button:hover::before,
-          .collapsible-button.active::before {
-            transform: scaleX(0.1);
-            background-color: #00573b;
-          }
-        
-          .collapsible-button.active {
-            text-decoration: none; 
-          }
-        
-          .collapsible-content {
-            padding: 0 18px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            background-color: #f1f1f1;
-          }
-        
-          .collapsible-content-active {
-            max-height: initial;
-          }
-          */
-
