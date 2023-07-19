@@ -27,10 +27,10 @@
       font-weight: 400;
       src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
     }
-
+/* 
     body {
       background-color: #ffffff;
-    }
+    } */
 
     .overlay {
       position: absolute;
@@ -175,7 +175,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
       <style>
         .custom-navbar {
-          background-color: #00573b;
+          background-image: url(./assets/images/navbarbackground-RyJOAXi9O-transformed.jpeg);
           position: relative;
           z-index: 1;
         }
@@ -320,150 +320,173 @@
     }
   });
   </script>
-
-  <!-- Divider -->
-  <div class="divider">
-    <span></span>
-    <span>
-      <div class="logo">
-        <img src="./assets/images/logos/chrisinternshiplogo.png" width="75" height="75">
-      </div>
-    </span>
-    <span></span>
-  </div>
-
   <style>
+    body, html {
+      background-repeat: repeat;
+      background-size: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url()
+    }
+  
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       height: 100%;
+      width: 100%;
       text-align: center;
     }
-   
-ul {
-  list-style-type: none;
-}
-
-a {
-  color: #00573b;
-  text-decoration: none;
-}
-
-/* Accordian Main */
-h1 {
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 80px;
-}
-
-h1 a {
-  color: #00573b;
-  font-size: 16px;
-}
-
-.accordion {
-  margin: 0 auto; /* Add this line */
-  max-width: 900px; /* Add this line */
-}
-
-.accordion .link {
-  display: flex;
-  align-items: center;
-  padding: 15px 42px;
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.accordion .link img {
-  margin-right: 10px;
-}
-
-.accordion .link > div {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-.accordion .link p {
-  margin: 0;
-  text-align: center;
-}
-
-.accordion li i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 12px;
-  font-size: 16px;
-  color: #1a1a1a;
-  transition: all 0.4s ease;
-}
-
-.accordion li:last-child .link {
-  border-bottom: 0;
-}
-
-.accordion li i.fa-chevron-down {
-  /* right: auto; */
-  font-size: 16px;
-}
-
-.accordion li.open .link {
-  color: #00573b;
-}
-
-.accordion li.open i {
-  color: #00573b;
-}
-
-.accordion li.open i.fa-chevron-down {
-  transform: rotate(180deg);
-}
-
-/* Submenu */
-
-  
-    .accordion-container {
-      width: 50%;
-      max-width: 400px;
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    a {
+      color: #00573b;
+      text-decoration: none;
+    }
+    
+    /* Accordion Main */
+    h1 {
+      color: #FFF;
+      font-size: 24px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 80px;
+    }
+    
+    h1 a {
+      color: #00573b;
+      font-size: 16px;
+    }
+    
+    .accordion {
+      margin: auto;
+      width: 100%;
+      max-width: 2000px;
+      overflow: auto;
+    }
+           
+    .accordion .link {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+      padding: 25px 42px;
+      position: relative;
+      transition: all 0.7s ease;
     }
   
+    .accordion .link img {
+      margin-bottom: 10px;
+      transition: all 0.2s ease-in-out; 
+    }
+  
+    .accordion .link:hover img {
+      transform: scale(1.3); 
+    }
+  
+    .accordion .link > div {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    
+    .accordion .link p {
+      margin: 0;
+      max-height: 60%;
+      text-align: center;
+      position: relative;
+    }
+    
+    .accordion .link p::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background-color: #00573b;
+      transition: width 0.8s ease;
+      transform: translateX(-50%);
+    }
+  
+    .accordion li.open .link p::after {
+      width: 120%;
+    }
+  
+    .accordion li i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 530px;
+      font-size: 16px;
+      color: #1a1a1a;
+      transition: all 0.4s ease;
+    }
+         
+    .accordion li:last-child .link {
+      border-bottom: 0;
+    }
+   
+    .accordion li i.fa-chevron-down {
+      font-size: 0px;
+    }
+    
+    .accordion li.open .link {
+      color: #00573b;
+      transform: scale(1.3); 
+    }
+    
+    .accordion li.open i {
+      color: #00573b;
+    }
+    
+    .accordion li.open i.fa-chevron-down {
+      transform: rotate(180deg);
+    }
+     
+    /* Submenu */
+    
+    .accordion-container {
+      width: 100%;
+    }
+    
     .submenu {
-  position: relative;
-  text-align: center;
-  display: none;
-  background: white;
-  font-size: 13px;
-  padding: 3% 0 2% 0;
-  max-width: 100%
-}
-
-.submenu li {
-  border-bottom: 1px solid #4b4a5e;
-  text-align: center;
-}
-
-.submenu a {
-  display: block;
-  text-decoration: none;
-  color: #1a1a1a;
-  padding: 12px;
-  padding-left: 42px;
-  transition: all 0.25s ease;
-}
-
-.submenu a:hover {
-  background: #00573b;
-  color: #FFF;
-}
-
+      position: relative;
+      text-align: center;
+      display: none;
+      background: rgb(255, 255, 255);
+      font-size: 13px;
+      max-width: 100%;
+    }
+    
+    .submenu li {
+      border-bottom: 1px solid #4b4a5e;
+      text-align: center;
+    }
+    
+    .submenu a {
+      display: block;
+      text-decoration: none;
+      color: #1a1a1a;
+      padding: 12px;
+      padding-left: 42px;
+      transition: all 0.25s ease;
+    }
+    
+    .submenu a:hover {
+      background: #00573b;
+      color: #FFF;
+    }
   </style>
-
+  
 <script>
 // Accordian
 $(function() {
@@ -492,24 +515,21 @@ $(function() {
 });
 
 </script>
+  <!-- Divider -->
+  <div class="divider">
+    <span></span>
+    <span>
+      <div class="logo">
+        <img src="./assets/images/logos/chrisinternshiplogo.png" width="75" height="75">
+      </div>
+    </span>
+    <span></span>
+  </div>
+
 <div class="container">
   <div class="accordion-container"
     <div class="vmob">
       <ul id="accordion" class="accordion">
-    <li>
-      <div class="link">
-        <img width="65" src="./assets/images/logos/icons8-help-chat-68.png">
-        <p>ServiceNow</p>
-        <i class="fa fa-chevron-down"></i>
-      </div>
-      <ul class="submenu">
-        <p>My ServiceNow Experience. Lorem ipsum dolor sit amet. Sit fugiat deleniti aut sunt accusamus et distinctio aliquam sed quia suscipit est officiis sequi. Aut explicabo nihil est similique dignissimos a unde itaque et quia omnis sit placeat autem a repellat alias quo quos sint. 33 tempore molestiae aut architecto sunt quo itaque nobis ut excepturi numquam eum tempore ipsa est adipisci expedita 33 tempore quibusdam? Ab repudiandae debitis hic quisquam consequatur est nemo itaque eum quia quasi a necessitatibus praesentium a facere excepturi et sunt perferendis.
-
-          Id possimus delectus et vero possimus sed laborum dolor non dolorum assumenda qui accusamus quia et amet dolor ex deleniti velit! Ut porro debitis nam cupiditate galisum et eaque obcaecati quo autem autem aut iste quia ut quas quia. Non ullam nihil id sapiente perspiciatis et tempora voluptatibus ex fugiat excepturi qui odit debitis 33 officiis natus et modi ducimus.
-          
-          Eum delectus distinctio At dolor laudantium ad totam iusto et odio quaerat ea blanditiis expedita 33 corrupti obcaecati. Hic ipsa enim et quam dignissimos aut perspiciatis modi aut culpa perspiciatis id temporibus alias.</p>
-      </ul>
-    </li>
     <li>
       <div class="link">
         <img width="65" src="./assets/images/logos/icons8-computer-support-64.png">
@@ -517,17 +537,53 @@ $(function() {
         <i class="fa fa-chevron-down"></i>
       </div>
       <ul class="submenu">
-        <p>My IT ServiceDesk Experience</p>
+        <p>Primary objective – Provide IT support services for Oldcastle APG employees. Complete tickets that have been entered in the help desk. Reduce incidents within the company as a whole and cut down on IT related issues. 
+          <br></br>
+          Experience – As stated above, I had no experience in developing within Snow or even using it at all. Through some courses I took I gained some confidence in my ability to navigate the environment. With great mentors, I learned how to handle tickets, appropriate protocols, set up new employee workstations, and many different tips in how to handle the IT support side of Oldcastle APG. It was great and insightful to see how far an IT helpdesk has come.
+          <br></br>
+          Pictures -
+          <br></br>
+          Areas of Improvement – ServiceDesk is well ran, just small notes that were presented earlier on make the helpdesk more visible and provide/mandate training on how employees enter/track a ticket. 
+          <br></br>
+          Shoutouts – Tammy, Nicole, David
+          </p>
       </ul>
     </li>
     <li>
       <div class="link">
-        <img width="65" src="./assets/images/logos/icons8-technology-100.png">
+        <img width="65" src="./assets/images/logos/icons8-help-chat-68.png">
+        <p>ServiceNow</p>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        <p>Primary objective – Overarching support system for Oldcastle APG IT support employees. Provides the ability to efficiently track and serve employees with IT problems. Stores and visualizes data in a way that we can reduce issues and monitor performance of the department. The development of snow is to better provide the tools necessary for IT ServiceDesk employees to be able to do their job effectively.
+          <br></br>
+          Experience – Worked briefly with Katherine to do some User-Acceptance-Testing (UAT) on her monumental task of the development of ServiceNow. Wasn’t familiar with ServiceNow until about two weeks in and unfortunately didn’t get to do too much testing but it was a great experience to see the QA side of the development of our ServiceNow side.
+          <br></br>
+          Pictures -
+          <br></br>
+          Areas of Improvement – ServiceNow is on the right track, however just some small improvement measures would be a great touch. The help desk location on the employee website homepage should be made ease-of-use in mind. Also, the entering of tickets for non-IT employees. Make the help desk site easier to get too and provide sufficient employee training on how to submit a ticket and how to track your ticket. I ran into a quite a few employees who had no idea how to enter a ticket or where the help desk link even was. This can slow down support services and makes the jobs of Tammy/David more difficult as they are often relied upon as employees will forgo using the service and instead rely on them. More dashboards, tracking of information, etc.
+          <br></br>
+          Shoutouts – Mamadou, Raymond, Katherine 
+      </ul>
+    </li>
+    <li>
+      <div class="link">
+        <img width="65" height="65" src="./assets/images/logos/icons8-technology-100.png">
         <p>Asset Management</p>
         <i class="fa fa-chevron-down"></i>
       </div>
       <ul class="submenu">
-        <p>Input here</p>
+        <p>Primary objective – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware asset tracking done within snow. 
+          <br></br>
+          Experience – Whenever I had some free time Nicole had me work with Matt’s team in Asset Management. We would go through and verify SCCM data and match it up with the user and transfer this information over to the new procurement sheet. This may seem simple, but up until now there have been a large portion of errors. Once everything was confirmed, I would input tags into SNOW and assign a new hardware asset (Make, Model, etc.) to that specific user. (Assigned to, Location, etc.). Although my team with this team was limited it was valuable and Matt’s team has a very difficult task at hand.
+          <br></br>
+          Pictures -
+          <br></br>
+          Areas of Improvement – Sometimes the wrong information is in SCCM. Locations spreadsheet is very difficult to read considering we have so many locations and sites. When it comes to tracking assets, it is important to effectively track employee roles, locations, titles, etc.
+          <br></br>
+          Shoutouts – Matt, Allen, Nick
+          </p>
       </ul>
     </li>
     <li>
@@ -537,17 +593,39 @@ $(function() {
         <i class="fa fa-chevron-down"></i>
       </div>
       <ul class="submenu">
-        <p>Input here</p>
+        <p>Primary objective – Much like ServiceNow for IT, M3 is the go-to for Oldcastle APG’s ERP software.  The goal of the development is to provide users with an efficient and ease to use software that helps them fulfil and track orders and product for all our different products and business customers.
+          <br></br>
+          Experience – Primary work from Adham included getting assigned coding tasks for our M3 Software. The main task that I worked on from him was the rewrite of certain elements that were producing issues and/or errors. The Order delivery sheet was one such issue.  The calendar and associated dates were causing issues and producing errors. A rewrite of the HTML/CSS and the JavaScript functions associated with it was required.
+          <br></br>
+          Pictures section
+          <br></br>
+          Areas of Improvement – Not much on the development team itself, very dedicated and well managed. I also did not have access to the software itself so do not have many comments on that however I did notice some time conflicts between teams overseas and here in corporate.
+          <br></br>
+          Shoutouts – Adham, Carole
+          </p>
       </ul>
     </li>
     <li>
       <div class="link">
-        <img width="65" src="./assets/images/logos/icons8-think-100.png">
+        <img width="65" height ="65" src="./assets/images/logos/icons8-think-100.png">
         <p>Overall Reflection</p>
         <i class="fa fa-chevron-down"></i>
       </div>
       <ul class="submenu">
-        <p>INFO</p>
+        <p>•	Great experience
+          •	Important/fulfilling work
+          •	Website made with JavaScript functions in mind used in M3/Snow software.
+          •	Great culture within the company 
+          •	Valuable meetings/tours to learn about Oldcastle and our mission
+        <br></br>
+          Areas of Improvement – 
+          •	Longer internship (3 months ideally)
+          •	Mentors were a great addition and ideally should be assigned Day 1.
+          •	Structured Tasks
+          (See why it wasn’t done and I learned about many different areas of the company. I am a little more self-motivated and enjoyed learning about many different teams, but other interns may feel differently and may have preferred to focus on one team one goal at a time. (I am glad that I got to work doing many different things though!)
+          <br></br>
+          Shoutouts – Courtney, Craig, Maddie, Sheri
+          </p>
       </ul>
     </li>
   </ul>
