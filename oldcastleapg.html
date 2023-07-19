@@ -10,257 +10,47 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./assets/images/logos/favicon.png" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
-  <!-- Add the JavaScript file -->
+  
+  <!--JavaScript files -->
   <script type = "text/javascript" src="./scripts/script.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-<style>
-
-/*Hero Slider*/
-@font-face {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
-    }
-
-    body {
-      background-color: #ffffff;
-    }
-
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to bottom, transparentize(#0E1D33, 0.2), transparentize(#0E1D33, 0.8));
-    }
-
-    .hero-slider {
-      width: 100%;
-      height: 45vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .carousel-cell {
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-
-      .inner {
-        position: relative;
-        top: 45%;
-        transform: translateY(-50%);
-        color: white;
-        text-align: center;
-
-        .subtitle {
-          font-family: 'Roboto Slab', serif;
-          font-size: 2.2rem;
-          line-height: 1.2em;
-          font-weight: 200;
-          font-style: italic;
-          letter-spacing: 3px;
-          color: rgba(255, 255, 255, 0.5);
-          margin-bottom: 5px;
-        }
-
-        .title {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 3.5rem;
-          text-shadow: 5px 5px 10px black;
-          line-height: 1.2em;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          margin-bottom: 30px;
-        }
-
-        .btn {
-          border: 1px solid #fff;
-          padding: 14px 18px;
-          text-transform: uppercase;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 0.8rem;
-          font-weight: 700;
-          filter: brightness(100%);
-          text-shadow: 5px 5px 10px black;
-          letter-spacing: 3px;
-          color: #fff;
-          backdrop-filter: blur(0.2px);
-          text-decoration: none;
-          transition: all 0.2s ease;
-
-          &:hover {
-            background: #00573b;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            text-shadow: 20px 20px 40px black;
-          }
-        }
-      }
-    }
-
-/* Custom styles for Flickity carousel arrows */
-.flickity-prev-next-button {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  opacity: 0.5;
-  transition: opacity 0.2s;
-}
-
-.flickity-prev-next-button:hover {
-  opacity: 1;
-}
-
-.flickity-prev-next-button svg {
-  fill: #fff;
-  width: 40px;
-  height: 40px;
-  transition: fill 0.7s;
-}
-
-.flickity-prev-next-button:hover svg {
-  fill: #00573b;
-  transition: fill 1s;
-}
-
-.flickity-prev-next-button .arrow-circle {
-  fill: #fff;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.flickity-prev-next-button:hover .arrow-circle {
-  opacity: 1;
-}
-
-
-.flickity-page-dots {
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-
-  .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #fff;
-  border: 1px solid #00573b;
-  margin: 0 5px;
-  }
-
-  .dot.is-selected {
-  background: #00573b;
-  border-color: #000;
-  }
-  }
-
-    
-  </style>
-<body id="oldcastleapg" onload="checkPages()">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<!--Page Value-->
+<body id="oldcastleapg" onload="checkPages()">
 
+<!--Navbar-->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
-     <style>
-  .custom-navbar {
-  background-color: #00573b;
-  position: relative;
-  z-index: 1;
-}
+      <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link current-page" style="font-size: 20px; right: 40px;"  data-active="index" href="./index.html">My Internship</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+        <a class="mx-auto" href="./index.html">
+          <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
+            style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+        <ul class="navbar-nav mr-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 20px; left: 40px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-.custom-navbar .nav-link {
-  position: relative;
-  color: white;
-  text-shadow: 4px 4px 8px black;
-}
-
-.custom-navbar .nav-link::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: white;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-
-.custom-navbar .nav-link:hover::before,
-.custom-navbar .nav-link.active::before {
-  visibility: visible;
-  transform: scaleX(0.80);
-  transition-delay: 0s;
-}
-
-.custom-navbar .nav-link.active::before {
-  transition-delay: 0.2s;
-}
-
-.circle-image {
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.navbar-nav.mr-auto {
-  margin-right: auto;
-}
-
-.navbar-nav.ml-auto {
-  margin-left: auto;
-}
-
-      </style>
-
-        <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-          <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link" data-active="index" href="./index.html">My Internship</a>
-            </li>
-          </ul>
-        </div>
-        <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-          <a class="mx-auto" href="./index.html">
-            <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle" style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-          <ul class="navbar-nav mr-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link current-page" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      
-    
-    </body>
-    
-    <div class="arrow">
-      <div class="arrow-top"></div>
-      <div class="arrow-bottom"></div>
-    </div>
-    <div class="hero-slider" data-flickity='{ "autoPlay": 2000, "wrapAround": true }'>
+    <!--Hero Slider-->
+    <div class="hero-slider" data-flickity>
       <div class="carousel-cell" style="background-image:url(./assets/images/resizedtransition/oldcastleheroslider/oldcastledesignbanner.jpg);">
         <div class="inner">
           <h2 class="title">Oldcastle APG</h2>
