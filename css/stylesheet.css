@@ -1,3 +1,9 @@
+.logo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+}
+
 /* Navbar */
 .custom-navbar {
   background-image: url(/digechris.github.io/assets/images/navbarbackground-transformed.jpeg);
@@ -178,7 +184,8 @@
     .flickity-prev-next-button:hover .arrow-circle {
       opacity: 1;
     }
-    
+
+
   /* Footer */
   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
   
