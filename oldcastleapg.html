@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
   <link rel="icon" type="image/png" href="./assets/images/logos/favicon.png" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
 </head>
@@ -154,7 +154,7 @@ var flkty = new Flickity(carousel, {
   }
 
   .accordion-2 {
-    width: 100%;
+    width: 20%;
     max-width: 2000px;
     overflow: auto;
     overflow: hidden;
@@ -168,7 +168,7 @@ var flkty = new Flickity(carousel, {
     text-align: left;
     padding: 25px 42px;
     position: relative;
-    transition: all 0.7s ease;
+    transition: all 0.3s ease;
   }
 
   .accordion-2 .link img {
@@ -184,7 +184,7 @@ var flkty = new Flickity(carousel, {
     transform: scale(1.3);
   }
 
-  .accordion-2 .link>div {
+  .accordion-2 .link > div {
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -252,38 +252,45 @@ var flkty = new Flickity(carousel, {
     justify-content: flex-start;
   }
 
-  .submenu {
-    position: absolute;
-    text-align: center;
-    display: none;
-    background: rgb(255, 255, 255);
-    font-size: 13px;
-    max-width: 100%;
-    left: 100%;
-    top: 0;
-  }
+/* Update submenu positioning and style */
+.submenu {
+  position: absolute;
+  text-align: center;
+  display: none; /* Hide the submenus by default */
+  background: rgb(255, 255, 255);
+  font-size: 13px;
+  max-width: 100%;
+  left: 50%; /* Center the submenu horizontally */
+  transform: translateX(-50%); /* Center the submenu relative to its own width */
+  top: 0;
+  padding: 20px; /* Adjust the padding for spacing */
+}
 
-  .submenu li {
-    border-bottom: 1px solid #4b4a5e;
-    text-align: center;
-  }
+.submenu li {
+  display: inline-block; /* Display the list items horizontally */
+  margin: 5px; /* Add some margin between the images */
+}
 
-  .submenu a {
-    display: block;
-    text-decoration: none;
-    color: #1a1a1a;
-    padding: 12px;
-    padding-left: 42px;
-    transition: all 0.25s ease;
-  }
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+  padding: 12px;
+  padding-left: 0px;
+  transition: all 0.25s ease;
+}
+.submenu a:hover img {
+  transition: all 0.35s ease;
+  transform: scale(1.2);
+}
 
-  .submenu a:hover {
-    background: #00573b;
-    color: #FFF;
-  }
+.submenu a:hover {
+  background: none; /* Remove the background color on hover */
+  color: #1a1a1a; /* Change the text color on hover */
+}
+
 </style>
-<!-- Add jQuery library -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
   // Accordion
   $(function () {
@@ -293,23 +300,29 @@ var flkty = new Flickity(carousel, {
 
       var links = this.el.find('.link');
       links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
+
+      // Open the first submenu by default on page load
+      var firstSubmenu = this.el.find('.submenu').first();
+      firstSubmenu.slideDown();
+      firstSubmenu.parent().addClass('open');
+      firstSubmenu.prev('.link').find('img').addClass('active');
     };
 
     Accordion2.prototype.dropdown = function (e) {
       var $el = e.data.el;
       var $this = $(this);
-      var $submenu = $this.next('.submenu'); // Change this line to target the submenu element
+      var $submenu = $this.next('.submenu');
 
       $submenu.slideToggle();
       $this.parent().toggleClass('open');
-
-      // Add or remove the 'active' class on the image
       $this.find('img').toggleClass('active');
 
       if (!e.data.multiple) {
-        // Use .closest() and .find() to find the correct .submenu elements
-        $el.find('.submenu').not($submenu).slideUp().parent().removeClass('open');
-        $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
+        // Close other submenus and remove 'active' class from their images
+        var $siblings = $this.parent().siblings();
+        $siblings.removeClass('open');
+        $siblings.find('.submenu').slideUp();
+        $siblings.find('img').removeClass('active');
       }
     };
 
@@ -322,22 +335,36 @@ var flkty = new Flickity(carousel, {
   <div class="container2">
     <div class="accordion-container2" style="justify-content: flex-end;">
       <ul id="accordion" class="accordion-2" style="word-wrap: break-word;">
-        <li>
+        <li class="open">
           <div class="link">
             <img width="250" height="46.75" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
-            <i class="fa fa-chevron-down"></i>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <ul class="submenu">
-            <li><a href="#"><img src="./assets/images/logos/sakrete-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
-            <li><a href="#"><img src="./assets/images/logos/Ash-Grove-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
-            <li><a href="#"><img src="./assets/images/logos/Barrette-300x300.webp" width="100" height="100" alt="Sakrete Logo"></a></li>
-            <!-- Add more submenu items if needed -->
+            <h2>We may own the backyard. But so can you.</h2>
+            <li><a href="https://www.sakrete.com/"><img src="./assets/images/logos/sakrete-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <li><a href="https://www.ashgrove.com/"><img src="./assets/images/logos/Ash-Grove-300x300.jpg" width="100" height="100" alt="Ash Grove Logo"></a></li>
+            <li><a href="https://anchordiamond.com/"><img src="./assets/images/logos/Anchor-Diamond-1-300x300.jpg" width="100" height="100" alt="Anchor Diamond Logo"></a></li>
+            <li><a href="https://amerimix.com/"><img src="./assets/images/logos/Amerimix-300x300.jpg" width="100" height="100" alt="Amerimix Logo"></a></li>
+            <li><a href="https://www.barretteoutdoorliving.com/"><img src="./assets/images/logos/Barrette-300x300.webp" width="100" height="100" alt="Barrette Logo"></a></li>
+            <li><a href="https://www.belgard.com/"><img src="./assets/images/logos/Belgard-300x300.jpg" width="100" height="100" alt="Belgard Logo"></a></li>
+            <li><a href="https://www.calstone.com/"><img src="./assets/images/logos/Calstone-300x300.webp" width="100" height="100" alt="Calstone Logo"></a></li>
+            <li><a href="https://www.echelonmasonry.com/"><img src="./assets/images/logos/Echelon-300x300.jpg" width="100" height="100" alt="Echelon Masonry Logo"></a></li>
+            <li><a href="https://ephenry.com/"><img src="./assets/images/logos/EP-Henry-300x300.webp" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <li><a href="https://jollygardener.com/"><img src="./assets/images/logos/Jolly-Gardener-300x300.jpg" width="100" height="100" alt="Jolly Gardener Logo"></a></li>
+            <li><a href="https://www.moistureshield.com/"><img src="./assets/images/logos/MoistureShield-300x300.jpg" width="100" height="100" alt="Moistureshield Logo"></a></li>
+            <li><a href="https://pebbletec.com/"><img src="./assets/images/logos/PebbleTec-300x300.jpg" width="100" height="100" alt="Pebbletec Logo"></a></li>
+            <li><a href="https://permacon.ca/en/"><img src="./assets/images/logos/Permacon-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <li><a href="https://www.thesoildoctor.com/"><img src="./assets/images/logos/Soil-Doctor-300x300.jpg" width="100" height="100" alt="Soil Doctor Logo"></a></li>
+            <li><a href="https://techniseal.com/pro_en_us/"><img src="./assets/images/logos/Techniseal-300x300.jpg" width="100" height="100" alt="Techniseal Logo"></a></li>
+            <li><a href="https://www.timberlineyard.com/"><img src="./assets/images/logos/Timberline-300x300.jpg" width="100" height="100" alt="Timberline Logo"></a></li>
+            <li><a href="https://www.westile.com/"><img src="./assets/images/logos/Westile-300x300.jpg" width="100" height="100" alt="Westile Logo"></a></li>                 
           </ul>
         </li>
         <li>
           <div class="link">
             <img width="250" src="./assets/images/logos/myexperience-transformed.png">
-            <i class="fa fa-chevron-down"></i>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <ul class="submenu">
             <li>
@@ -364,7 +391,7 @@ var flkty = new Flickity(carousel, {
         </li>
       </ul>
     </div>
-  </div>>
+  </div>
 
 <!-- Divider -->
 <div class="divider"><span></span><span><div class="logo"><img src="./assets/images/logos/favicon.png" width="75" height="75"></div></span><span></span></div>
