@@ -29,7 +29,7 @@
       <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
           <li class="nav-item">
-            <a class="nav-link current-page" style="font-size: 20px; right: 40px;"  data-active="index" href="./index.html">My Internship</a>
+            <a class="nav-link current-page" style="font-size: 22px; right: 40px;"  data-active="index" href="./index.html">My Internship</a>
           </li>
         </ul>
       </div>
@@ -44,7 +44,7 @@
       <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 20px; left: 40px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
+            <a class="nav-link" style="font-size: 22px; left: 40px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
           </li>
         </ul>
       </div>
@@ -128,6 +128,7 @@ var flkty = new Flickity(carousel, {
     word-wrap: break-word;
     overflow: hidden;
     padding-left: 30px;
+    z-index: 2;
   }
 
   ul {
@@ -154,7 +155,7 @@ var flkty = new Flickity(carousel, {
   }
 
   .accordion-2 {
-    width: 20%;
+    width: 30%;
     max-width: 2000px;
     overflow: auto;
     overflow: hidden;
@@ -166,9 +167,10 @@ var flkty = new Flickity(carousel, {
     flex-direction: column;
     align-items: left;
     text-align: left;
-    padding: 25px 42px;
+    padding: 25px 45px;
     position: relative;
     transition: all 0.3s ease;
+    z-index: 3;
   }
 
   .accordion-2 .link img {
@@ -218,7 +220,7 @@ var flkty = new Flickity(carousel, {
   .accordion-2 li i {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 30px;
     transform: translateY(-50%);
     font-size: 16px;
     color: #1a1a1a;
@@ -263,7 +265,8 @@ var flkty = new Flickity(carousel, {
   left: 50%; /* Center the submenu horizontally */
   transform: translateX(-50%); /* Center the submenu relative to its own width */
   top: 0;
-  padding: 10px; /* Adjust the padding for spacing */
+  padding: 0px; /* Adjust the padding for spacing */
+  z-index: 1;
 }
 
 .submenu li {
@@ -344,7 +347,7 @@ var flkty = new Flickity(carousel, {
       <ul id="accordion" class="accordion-2" style="word-wrap: break-word;">
         <li class="open">
           <div class="link">
-            <img width="325" height="60.775" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
+            <img width="300" height="55" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
             <i class="fas fa-chevron-down"></i>
           </div>
           <ul class="submenu">
@@ -411,8 +414,7 @@ var flkty = new Flickity(carousel, {
     </div>
   </div>
 
-<!-- Divider -->
-<div class="divider"><span></span><span><div class="divider-logo"><img src="./assets/images/logos/favicon.png" width="75" height="75"></div></span><span></span></div>
+
 
   <footer>
     <div class="footer-content">
