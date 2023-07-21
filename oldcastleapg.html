@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" type="image/png" href="./assets/images/logos/favicon.png" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
 </head>
@@ -113,178 +114,180 @@ var flkty = new Flickity(carousel, {
   <!-- Divider -->
 <div class="divider"><span></span><span><div class="logo"><img src="./assets/images/logos/favicon.png" width="75" height="75"></div></span><span></span></div>
   
-  <style>
-    /* Accordian Oldcastle */
-.accordion-container2 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
-  text-align: left;
-  flex-wrap: wrap;
-  position: relative;
-  word-wrap: break-word;
-  overflow: hidden;
-  /* padding-left: 30px; */
-}
+<style>
+  /* Styles for Accordion */
+  .container2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    flex-wrap: wrap;
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    padding-left: 30px;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-a {
-  color: #00573b;
-  text-decoration: none;
-}
-/* ... Your existing styles ... */
+  a {
+    color: #00573b;
+    text-decoration: none;
+  }
 
-/* Accordion 2 */
-h1.accordion-2 {
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 80px;
-}
+  h1.accordion-2 {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 80px;
+  }
 
-h1.accordion-2 a {
-  color: #00573b;
-  font-size: 16px;
-}
+  h1.accordion-2 a {
+    color: #00573b;
+    font-size: 16px;
+  }
 
-.accordion-2 {
-  width: 100%;
-  max-width: 2000px;
-  overflow: auto;
-  overflow: hidden;
-  margin: 0;
-}
+  .accordion-2 {
+    width: 100%;
+    max-width: 2000px;
+    overflow: auto;
+    overflow: hidden;
+    margin: 0;
+  }
 
-.accordion-2 .link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 42px;
-  position: relative;
-  transition: all 0.7s ease;
-}
+  .accordion-2 .link {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding: 25px 42px;
+    position: relative;
+    transition: all 0.7s ease;
+  }
 
-.accordion-2 .link img {
-  margin-bottom: 10px;
-  transition: all 0.2s ease-in-out; 
-}
+  .accordion-2 .link img {
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+  }
 
-.accordion-2 .link:hover img {
-  transform: scale(1.3); 
-}
+  .accordion-2 .link:hover img {
+    transform: scale(1.3);
+  }
 
-.accordion-2 li.open .link img {
-  transform: scale(1.3);
-}
+  .accordion-2 li.open .link img {
+    transform: scale(1.3);
+  }
 
-.accordion-2 .link > div {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: space-between;
-}
+  .accordion-2 .link>div {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
 
-.accordion-2 .link p {
-  margin: 0;
-  max-height: 60%;
-  text-align: center;
-  position: relative;
-}
+  .accordion-2 .link p {
+    margin: 0;
+    max-height: 60%;
+    text-align: center;
+    position: relative;
+  }
 
-.accordion-2 .link p::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background-color: #00573b;
-  transition: width 0.8s ease;
-  transform: translateX(-50%);
-}
+  .accordion-2 .link p::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #00573b;
+    transition: width 0.8s ease;
+    transform: translateX(-50%);
+  }
 
-.accordion-2 li.open .link p::after {
-  width: 120%;
-}
+  .accordion-2 li.open .link p::after {
+    width: 120%;
+  }
 
-.accordion-2 li i {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #1a1a1a;
-  transition: all 0.4s ease;
-}
+  .accordion-2 li i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #1a1a1a;
+    transition: all 0.4s ease;
+  }
 
-.accordion-2 li:last-child .link {
-  border-bottom: 0;
-}
+  .accordion-2 li:last-child .link {
+    border-bottom: 0;
+  }
 
-.accordion-2 li i.fa-chevron-down {
-  font-size: 0px;
-}
+  .accordion-2 li i.fa-chevron-down {
+    font-size: 0px;
+  }
 
-.accordion-2 li.open .link {
-  color: #00573b;
-  transform: scale(1.0); 
-}
+  .accordion-2 li.open .link {
+    color: #00573b;
+    transform: scale(1.0);
+  }
 
-.accordion-2 li.open i {
-  color: #00573b;
-}
+  .accordion-2 li.open i {
+    color: #00573b;
+  }
 
-.accordion-2 li.open i.fa-chevron-down {
-  transform: rotate(180deg);
-}
+  .accordion-2 li.open i.fa-chevron-down {
+    transform: rotate(180deg);
+  }
 
-/* Submenu */
+  .accordion-container2 {
+    width: 100%;
+    /* Add this to align accordion items to the left */
+    justify-content: flex-start;
+  }
 
-.accordion-container {
-  width: 100%;
-}
+  .submenu {
+    position: absolute;
+    text-align: center;
+    display: none;
+    background: rgb(255, 255, 255);
+    font-size: 13px;
+    max-width: 100%;
+    left: 100%;
+    top: 0;
+  }
 
-.submenu {
-  position: relative;
-  text-align: center;
-  display: none;
-  background: rgb(255, 255, 255);
-  font-size: 13px;
-  max-width: 100%;
-}
+  .submenu li {
+    border-bottom: 1px solid #4b4a5e;
+    text-align: center;
+  }
 
-.submenu li {
-  border-bottom: 1px solid #4b4a5e;
-  text-align: center;
-}
+  .submenu a {
+    display: block;
+    text-decoration: none;
+    color: #1a1a1a;
+    padding: 12px;
+    padding-left: 42px;
+    transition: all 0.25s ease;
+  }
 
-.submenu a {
-  display: block;
-  text-decoration: none;
-  color: #1a1a1a;
-  padding: 12px;
-  padding-left: 42px;
-  transition: all 0.25s ease;
-}
-
-.submenu a:hover {
-  background: #00573b;
-  color: #FFF;
-}
-  </style>
-  <script>
-// Accordian
-$(function() {
-    var Accordion2 = function(el, multiple) {
+  .submenu a:hover {
+    background: #00573b;
+    color: #FFF;
+  }
+</style>
+<!-- Add jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Accordion
+  $(function () {
+    var Accordion2 = function (el, multiple) {
       this.el = el || {};
       this.multiple = multiple || false;
 
@@ -292,19 +295,20 @@ $(function() {
       links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
     };
 
-    Accordion2.prototype.dropdown = function(e) {
+    Accordion2.prototype.dropdown = function (e) {
       var $el = e.data.el;
-      $this = $(this),
-      $next = $this.next();
+      var $this = $(this);
+      var $submenu = $this.next('.submenu'); // Change this line to target the submenu element
 
-      $next.slideToggle();
+      $submenu.slideToggle();
       $this.parent().toggleClass('open');
 
       // Add or remove the 'active' class on the image
       $this.find('img').toggleClass('active');
 
       if (!e.data.multiple) {
-        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+        // Use .closest() and .find() to find the correct .submenu elements
+        $el.find('.submenu').not($submenu).slideUp().parent().removeClass('open');
         $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
       }
     };
@@ -312,73 +316,55 @@ $(function() {
     var accordion2 = new Accordion2($('#accordion'), false);
   });
 </script>
+</head>
 
-<div class="container2">
-  <div class="accordion-container2" style="justify-content: flex-end;">
-      <ul id="accordion2" class="accordion-2" style="word-wrap: break-word;">
-    <li>
-      <div class="link">
-        <img width="250" height="46.75" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
-      </div>
-      <ul class="submenu"><p>
-        <div class ="logo">Our family</div>
-        <img src="./assets/images/logos/sakrete-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Ash-Grove-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Barrette-300x300.webp" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Belgard-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Calstone-300x300.webp" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Echelon-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/EP-Henry-300x300.webp" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/MoistureShield-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/PebbleTec-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Permacon-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Techniseal-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Westile-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Anchor-Diamond-1-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Soil-Doctor-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Timberline-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-        <img src="./assets/images/logos/Jolly-Gardener-300x300.jpg" width="100" height="100" alt="Sakrete Logo">
-          </p>
+<body>
+  <div class="container2">
+    <div class="accordion-container2" style="justify-content: flex-end;">
+      <ul id="accordion" class="accordion-2" style="word-wrap: break-word;">
+        <li>
+          <div class="link">
+            <img width="250" height="46.75" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="#"><img src="./assets/images/logos/sakrete-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <li><a href="#"><img src="./assets/images/logos/Ash-Grove-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <li><a href="#"><img src="./assets/images/logos/Barrette-300x300.webp" width="100" height="100" alt="Sakrete Logo"></a></li>
+            <!-- Add more submenu items if needed -->
+          </ul>
+        </li>
+        <li>
+          <div class="link">
+            <img width="250" src="./assets/images/logos/myexperience-transformed.png">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="submenu">
+            <li>
+              <p>
+                <!-- Add your content for submenu item 1 -->
+              </p>
+            </li>
+            <!-- Add more submenu items if needed -->
+          </ul>
+        </li>
+        <li>
+          <div class="link">
+            <img width="250" src="./assets/images/logos/whatilearned-transformed.png">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+          <ul class="submenu">
+            <li>
+              <p>
+                <!-- Add your content for submenu item 2 -->
+              </p>
+            </li>
+            <!-- Add more submenu items if needed -->
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li>
-      <div class="link">
-        <img width="250" src="./assets/images/logos/myexperience-transformed.png">
-      </div>
-      <ul class="submenu">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Egestas erat imperdiet sed euismod nisi porta lorem. Facilisis volutpat est velit egestas dui id ornare arcu odio. Egestas erat imperdiet sed euismod nisi. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Cursus mattis molestie a iaculis. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor magna eget est lorem ipsum dolor sit amet. Laoreet sit amet cursus sit amet dictum. Pharetra magna ac placerat vestibulum lectus. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Neque aliquam vestibulum morbi blandit cursus risus at. Viverra vitae congue eu consequat. Sed pulvinar proin gravida hendrerit. Non consectetur a erat nam at lectus urna duis.
-
-          Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Nibh tellus molestie nunc non blandit massa enim. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel pretium lectus quam id leo in vitae. Nibh mauris cursus mattis molestie a. Justo nec ultrices dui sapien. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Dui accumsan sit amet nulla. Morbi leo urna molestie at elementum eu facilisis sed. Diam vel quam elementum pulvinar etiam non quam lacus. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper.
-          
-          Faucibus et molestie ac feugiat. Non quam lacus suspendisse faucibus. Id interdum velit laoreet id donec ultrices tincidunt. Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat. Posuere sollicitudin aliquam ultrices sagittis. Viverra accumsan in nisl nisi scelerisque. Viverra accumsan in nisl nisi. Ultrices in iaculis nunc sed augue lacus. Aliquet nec ullamcorper sit amet. In aliquam sem fringilla ut. Eu lobortis elementum nibh tellus molestie nunc. Sapien pellentesque habitant morbi tristique senectus.
-          
-          Auctor neque vitae tempus quam pellentesque. Mauris sit amet massa vitae. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Elit at imperdiet dui accumsan sit. Luctus accumsan tortor posuere ac ut consequat semper viverra. Sit amet mattis vulputate enim nulla aliquet porttitor. Eu sem integer vitae justo. Enim ut tellus elementum sagittis. Bibendum at varius vel pharetra vel turpis nunc eget. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Volutpat odio facilisis mauris sit amet massa vitae tortor. Viverra maecenas accumsan lacus vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. In fermentum et sollicitudin ac orci phasellus egestas tellus. Arcu dictum varius duis at consectetur lorem. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae.
-          
-          Massa vitae tortor condimentum lacinia quis. Mattis aliquam faucibus purus in. Nibh sed pulvinar proin gravida. Placerat in egestas erat imperdiet sed euismod nisi. Tincidunt ornare massa eget egestas. Vitae nunc sed velit dignissim sodales ut eu sem integer. Metus aliquam eleifend mi in nulla. At quis risus sed vulputate odio ut. Enim nec dui nunc mattis enim ut tellus. Non diam phasellus vestibulum lorem sed. Hac habit</p>
-      </ul>
-    </li>
-    <li>
-      <div class="link">
-        <img width="250" src="./assets/images/logos/whatilearned-transformed.png">
-      </div>
-      <ul class="submenu">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Egestas erat imperdiet sed euismod nisi porta lorem. Facilisis volutpat est velit egestas dui id ornare arcu odio. Egestas erat imperdiet sed euismod nisi. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Cursus mattis molestie a iaculis. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor magna eget est lorem ipsum dolor sit amet. Laoreet sit amet cursus sit amet dictum. Pharetra magna ac placerat vestibulum lectus. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Neque aliquam vestibulum morbi blandit cursus risus at. Viverra vitae congue eu consequat. Sed pulvinar proin gravida hendrerit. Non consectetur a erat nam at lectus urna duis.
-
-          Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Nibh tellus molestie nunc non blandit massa enim. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vel pretium lectus quam id leo in vitae. Nibh mauris cursus mattis molestie a. Justo nec ultrices dui sapien. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Dui accumsan sit amet nulla. Morbi leo urna molestie at elementum eu facilisis sed. Diam vel quam elementum pulvinar etiam non quam lacus. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper.
-          
-          Faucibus et molestie ac feugiat. Non quam lacus suspendisse faucibus. Id interdum velit laoreet id donec ultrices tincidunt. Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat. Posuere sollicitudin aliquam ultrices sagittis. Viverra accumsan in nisl nisi scelerisque. Viverra accumsan in nisl nisi. Ultrices in iaculis nunc sed augue lacus. Aliquet nec ullamcorper sit amet. In aliquam sem fringilla ut. Eu lobortis elementum nibh tellus molestie nunc. Sapien pellentesque habitant morbi tristique senectus.
-          
-          Auctor neque vitae tempus quam pellentesque. Mauris sit amet massa vitae. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Morbi tincidunt augue interdum velit euismod in pellentesque massa. Elit at imperdiet dui accumsan sit. Luctus accumsan tortor posuere ac ut consequat semper viverra. Sit amet mattis vulputate enim nulla aliquet porttitor. Eu sem integer vitae justo. Enim ut tellus elementum sagittis. Bibendum at varius vel pharetra vel turpis nunc eget. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Volutpat odio facilisis mauris sit amet massa vitae tortor. Viverra maecenas accumsan lacus vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. In fermentum et sollicitudin ac orci phasellus egestas tellus. Arcu dictum varius duis at consectetur lorem. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae.
-          
-          Massa vitae tortor condimentum lacinia quis. Mattis aliquam faucibus purus in. Nibh sed pulvinar proin gravida. Placerat in egestas erat imperdiet sed euismod nisi. Tincidunt ornare massa eget egestas. Vitae nunc sed velit dignissim sodales ut eu sem integer. Metus aliquam eleifend mi in nulla. At quis risus sed vulputate odio ut. Enim nec dui nunc mattis enim ut tellus. Non diam phasellus vestibulum lorem sed. Hac habit
-          </p>
-      </ul>
-    </li>
-  </ul>
-</div>
-</div>
-</div>
-</div>
+    </div>
+  </div>>
 
 <!-- Divider -->
 <div class="divider"><span></span><span><div class="logo"><img src="./assets/images/logos/favicon.png" width="75" height="75"></div></span><span></span></div>

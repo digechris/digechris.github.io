@@ -222,7 +222,7 @@ var flkty = new Flickity(carousel, {
     .accordion1 .link p::after {
       content: "";
       display: block;
-      position: absolute;
+      position: relative;
       bottom: 0;
       left: 50%;
       width: 0;
@@ -301,7 +301,8 @@ var flkty = new Flickity(carousel, {
       color: #FFF;
     }
   </style>
-  
+
+
 <script>
 // Accordian
 $(function() {
@@ -325,7 +326,7 @@ $(function() {
       $this.find('img').toggleClass('active');
 
       if (!e.data.multiple) {
-        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+        $el.find('.submenu1').not($next).slideUp().parent().removeClass('open');
         $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
       }
     };
@@ -371,7 +372,7 @@ $(function() {
         <img width="65" src="./assets/images/logos/icons8-help-chat-68.png">
         <p>ServiceNow</p>
       </div>
-      <ul class="submenu">
+      <ul class="submenu1">
         <p>Primary objective – Overarching support system for Oldcastle APG IT support employees. Provides the ability to efficiently track and serve employees with IT problems. Stores and visualizes data in a way that we can reduce issues and monitor performance of the department. The development of snow is to better provide the tools necessary for IT ServiceDesk employees to be able to do their job effectively.
           <br></br>
           Experience – Worked briefly with Katherine to do some User-Acceptance-Testing (UAT) on her monumental task of the development of ServiceNow. Wasn’t familiar with ServiceNow until about two weeks in and unfortunately didn’t get to do too much testing but it was a great experience to see the QA side of the development of our ServiceNow side.
@@ -388,7 +389,7 @@ $(function() {
         <img width="65" height="65" src="./assets/images/logos/icons8-technology-100.png">
         <p>Asset Management</p>
       </div>
-      <ul class="submenu">
+      <ul class="submenu1">
         <p>Primary objective – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware asset tracking done within snow. 
           <br></br>
           Experience – Whenever I had some free time Nicole had me work with Matt’s team in Asset Management. We would go through and verify SCCM data and match it up with the user and transfer this information over to the new procurement sheet. This may seem simple, but up until now there have been a large portion of errors. Once everything was confirmed, I would input tags into SNOW and assign a new hardware asset (Make, Model, etc.) to that specific user. (Assigned to, Location, etc.). Although my team with this team was limited it was valuable and Matt’s team has a very difficult task at hand.
@@ -406,7 +407,7 @@ $(function() {
         <img width="65" src="./assets/images/logos/icons8-software-65.png">
         <p>M3 Software Development</p>
       </div>
-      <ul class="submenu">
+      <ul class="submenu1">
         <p>Primary objective – Much like ServiceNow for IT, M3 is the go-to for Oldcastle APG’s ERP software.  The goal of the development is to provide users with an efficient and ease to use software that helps them fulfil and track orders and product for all our different products and business customers.
           <br></br>
           Experience – Primary work from Adham included getting assigned coding tasks for our M3 Software. The main task that I worked on from him was the rewrite of certain elements that were producing issues and/or errors. The Order delivery sheet was one such issue.  The calendar and associated dates were causing issues and producing errors. A rewrite of the HTML/CSS and the JavaScript functions associated with it was required.
@@ -424,7 +425,7 @@ $(function() {
         <img width="65" height ="65" src="./assets/images/logos/icons8-think-100.png">
         <p>Overall Reflection</p>
       </div>
-      <ul class="submenu">
+      <ul class="submenu1">
         <p>•	Great experience
           •	Important/fulfilling work
           •	Website made with JavaScript functions in mind used in M3/Snow software.

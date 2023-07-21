@@ -6,7 +6,7 @@
 
 /* Navbar */
 .custom-navbar {
-  background-image: url(./assets/images/background/navbarbackground-transformed.jpeg);
+  background-image: url(../assets/images/background/navbarbackground-transformed.png);
   background-repeat: repeat;
   height: 80px;
   box-shadow: 2px 2px 4px #00573b;
@@ -199,7 +199,7 @@
   
   footer {
     position: relative;
-    background-image: url(/digechris.github.io/assets/images/navbarbackground-transformed.jpeg);
+    background-image: url(../assets/images/background/navbarbackground-RyJOAXi9O-transformed.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     bottom: 0;
