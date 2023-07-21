@@ -6,7 +6,9 @@
 
 /* Navbar */
 .custom-navbar {
-  background-image: url(/digechris.github.io/assets/images/navbarbackground-transformed.jpeg);
+  background-image: url(./assets/images/background/navbarbackground-transformed.jpeg);
+  background-repeat: repeat;
+  height: 80px;
   box-shadow: 2px 2px 4px #00573b;
   position: relative;
   background-size: contain;
