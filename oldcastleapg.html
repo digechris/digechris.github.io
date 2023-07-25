@@ -263,7 +263,8 @@ var flkty = new Flickity(carousel, {
   background: rgb(255, 255, 255);
   font-size: 13px;
   max-width: 100%;
-  left: 50%; /* Center the submenu horizontally */
+  left: 50%;
+  right: 172px; /* Center the submenu horizontally */
   transform: translateX(-50%); /* Center the submenu relative to its own width */
   top: 0;
   padding: 5px 0; /* Adjust the padding for spacing */
@@ -271,8 +272,8 @@ var flkty = new Flickity(carousel, {
 }
 
 .submenu li {
-  display: inline-block;  Display the list items horizontally */
-  margin: 5px; /* Add some margin between the images */
+  display: inline-block; 
+  margin: 0px; /* Add some margin between the images */
 }
 
 .submenu a {
@@ -281,6 +282,8 @@ var flkty = new Flickity(carousel, {
   color: #1a1a1a;
   padding: 12px;
   padding-left: 0px;
+  padding-top: 7px;
+  padding-bottom: 0px;
   transition: all 0.25s ease;
 }
 .submenu a:hover img {
@@ -349,8 +352,8 @@ var flkty = new Flickity(carousel, {
         <li class="open">
           <div class="link">
             <img width="250" height="55" src="./assets/images/logos/OldcastleAPG-CRH-Primary.png">
-            <i class="fas fa-chevron-down"></i>
-          </div>
+            <i class="fas fa-chevron-down"></i></div>
+          <!-- <div style="padding-right: 30px;"> -->
           <ul class="submenu">
             <div class="submenu-logo"> We may own the backyard. But so can you.</div>
             <li><a href="https://www.sakrete.com/"><img src="./assets/images/logos/Sakrete-300x300.jpg" width="100" height="100" alt="Sakrete Logo"></a></li>
@@ -371,6 +374,7 @@ var flkty = new Flickity(carousel, {
             <li><a href="https://www.timberlineyard.com/"><img src="./assets/images/logos/Timberline-300x300.jpg" width="100" height="100" alt="Timberline Logo"></a></li>
             <li><a href="https://www.westile.com/"><img src="./assets/images/logos/Westile-300x300.jpg" width="100" height="100" alt="Westile Logo"></a></li>                
           </ul>
+        <!-- </div> -->
         </li>
         <li>
           <div class="link">
