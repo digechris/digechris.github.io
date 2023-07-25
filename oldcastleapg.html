@@ -177,6 +177,7 @@ var flkty = new Flickity(carousel, {
   .accordion-2 .link img {
     margin-bottom: 10px;
     transition: all 0.2s ease-in-out;
+    /* object-fit: cover; */
   }
 
   .accordion-2 .link:hover img {
@@ -251,7 +252,6 @@ var flkty = new Flickity(carousel, {
 
   .accordion-container2 {
     width: 100%;
-    /* Add this to align accordion items to the left */
     justify-content: flex-start;
   }
 
@@ -259,19 +259,19 @@ var flkty = new Flickity(carousel, {
 .submenu {
   position: absolute;
   text-align: center;
-  display: none; /* Hide the submenus by default */
+  display: none; 
   background: rgb(255, 255, 255);
   font-size: 13px;
   max-width: 100%;
   left: 50%; /* Center the submenu horizontally */
   transform: translateX(-50%); /* Center the submenu relative to its own width */
   top: 0;
-  padding: 0px; /* Adjust the padding for spacing */
+  padding: 5px 0; /* Adjust the padding for spacing */
   z-index: 1;
 }
 
 .submenu li {
-  display: inline-block; /* Display the list items horizontally */
+  display: inline-block;  Display the list items horizontally */
   margin: 5px; /* Add some margin between the images */
 }
 
@@ -280,7 +280,7 @@ var flkty = new Flickity(carousel, {
   text-decoration: none;
   color: #1a1a1a;
   padding: 12px;
-  padding-left: 30px;
+  padding-left: 0px;
   transition: all 0.25s ease;
 }
 .submenu a:hover img {
@@ -348,7 +348,7 @@ var flkty = new Flickity(carousel, {
       <ul id="accordion" class="accordion-2" style="word-wrap: break-word;">
         <li class="open">
           <div class="link">
-            <img width="250" height="55" src="./assets/images/logos/OldcastleAPG-CRH-Primary (2).png">
+            <img width="250" height="55" src="./assets/images/logos/OldcastleAPG-CRH-Primary.png">
             <i class="fas fa-chevron-down"></i>
           </div>
           <ul class="submenu">
