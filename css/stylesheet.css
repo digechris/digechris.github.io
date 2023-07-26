@@ -316,7 +316,7 @@
           .divider span { display: table-cell; position: relative; }
           .divider span:first-child, .divider span:last-child {
               width: 50%;
-              top: 38px;							
+              top: 30px;							
               -moz-background-size: 100% 2px; 	
               background-size: 100% 2px; 			
               background-position: 0 0, 0 100%;
