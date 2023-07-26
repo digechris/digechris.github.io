@@ -58,129 +58,120 @@
 
     /*Hero Slider*/
     
-    @font-face {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 400;
-      src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
-    }
+/* Fonts */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+}
 
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to bottom, transparentize(#0E1D33, 0.2), transparentize(#0E1D33, 0.8));
-    }
+/* Hero Slider */
+.hero-slider {
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+}
 
-    .hero-slider {
-      width: 100%;
-      height: 45vh;
-      overflow: hidden;
-      position: relative;
-    }
+.carousel-cell {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
-    .carousel-cell {
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
+.carousel-cell .inner {
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: center;
+}
 
-    .carousel-cell .inner {
-      position: relative;
-      top: 45%;
-      transform: translateY(-50%);
-      color: white;
-      text-align: center;
-    }
+.carousel-cell .subtitle {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.2rem;
+  line-height: 1.2em;
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+}
 
-    .carousel-cell .subtitle {
-      font-family: 'Roboto Slab', serif;
-      font-size: 2.2rem;
-      line-height: 1.2em;
-      font-weight: 200;
-      font-style: italic;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 5px;
-    }
+.carousel-cell .title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  text-shadow: 5px 5px 10px black;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  filter: brightness(100%);
+}
 
-    .carousel-cell .title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
-      text-shadow: 5px 5px 10px black;
-      line-height: 1.2em;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 30px;
-      filter: brightness(100%);
-    }
+.carousel-cell .btn {
+  border: 1px solid #fff;
+  padding: 14px 18px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  filter: brightness(100%);
+  text-shadow: 4px 4px 8px black;
+  letter-spacing: 3px;
+  color: #fff;
+  backdrop-filter: blur(0.5px);
+  transition: all 0.2s ease;
+}
 
-    .carousel-cell .btn {
-      border: 1px solid #fff;
-      padding: 14px 18px;
-      text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      filter: brightness(100%);
-      text-shadow: 4px 4px 8px black;
-      letter-spacing: 3px;
-      color: #fff;
-      backdrop-filter: blur(0.5px);
-      transition: all 0.2s ease;
-    }
+.carousel-cell .btn:hover {
+  background: #00573b;
+  border: 1px solid #fff;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-shadow: 20px 20px 40px black;
+}
 
-    .carousel-cell .btn:hover {
-      background: #00573b;
-      border: 1px solid #fff;
-      color: #ffffff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
-      text-shadow: 20px 20px 40px black;
-    }
+/* Custom styles for Flickity carousel arrows */
+.flickity-prev-next-button {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
 
-     /*Custom styles for Flickity carousel arrows */
- 
-    .flickity-prev-next-button {
-      width: 60px;
-      height: 60px;
-      background-color: transparent;
-      opacity: 0.5;
-      transition: opacity 0.2s;
-      cursor: pointer;
-    }
-     
-    .flickity-prev-next-button:hover {
-      opacity: 1;
-    }
-     
-    .flickity-prev-next-button svg {
-      fill: black;
-      width: 60px;
-      height: 60px;
-      transition: fill 0.7s;
-    }
-    
-    .flickity-prev-next-button:hover svg {
-      fill: #00573b;
-      transition: fill 1s;
-    }
-    
-    .flickity-prev-next-button .arrow-circle {
-      fill: #fff;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    
-    .flickity-prev-next-button:hover .arrow-circle {
-      opacity: 1;
-    }
+.flickity-prev-next-button:hover {
+  opacity: 1;
+}
+
+.flickity-prev-next-button svg {
+  fill: black;
+  width: 60px;
+  height: 60px;
+  transition: fill 0.7s;
+}
+
+.flickity-prev-next-button:hover svg {
+  fill: #00573b;
+  transition: fill 1s;
+}
+
+.flickity-prev-next-button .arrow-circle {
+  fill: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.flickity-prev-next-button:hover .arrow-circle {
+  opacity: 1;
+}
+
 
 
   /* Footer */
