@@ -368,7 +368,7 @@
 
   /* Submenu */
   .submenu-logo {
-    font-size: 12px;
+    font-size: 5px;
   }
 
   .submenu li {
@@ -377,15 +377,15 @@
   }
 
   .submenu a {
-    font-size: 10px;
+    font-size: 5px;
   }
 
   .submenu img {
-    width: 60px;
+    width: 10px;
     height: auto;
   }
 
   .submenu p {
-    font-size: 10px;
+    font-size: 5px;
   }
 }
