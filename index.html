@@ -13,7 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images/logos/newfavicon.webp" sizes="32x32">
   <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
-  
+
   <!-- Add the JavaScript file -->
   <script type="text/javascript" src="./scripts/script.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -24,31 +24,34 @@
 
 <!--Navbar-->
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-      <ul class="navbar-nav ml-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link current-page" style="font-size: 22px; right: 40px;"  data-active="index" href="./index.html">My Internship</a>
-        </li>
-      </ul>
-    </div>
-    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-      <a class="mx-auto" href="./index.html">
-        <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
-          style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;"></a>
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-    </div>
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-      <ul class="navbar-nav mr-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link" style="font-size: 22px; left: 40px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
+      <div class="container-fluid d-flex justify-content-center align-items-center">
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link current-page" style="font-size: 22px;" data-active="index" href="./index.html">My Internship</a>
+          </li>
+        </ul>
+        
+        <!-- Logo -->
+        <div class="navbar-brand mx-3">
+          <a href="./index.html">
+            <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
+              style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
+          </a>
+        </div>
   
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 22px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+
+
 <!--Hero Slider-->
     <div class="arrow">
       <div class="arrow-top"></div>
@@ -138,7 +141,7 @@ var flkty = new Flickity(carousel, {
   pageDots: true,
 });
   </script>
-  
+
   <style>
     .container1 {
       display: flex;
@@ -152,17 +155,17 @@ var flkty = new Flickity(carousel, {
       word-wrap: break-word;
       overflow: hidden;
     }
-    
+
     ul {
       list-style-type: none;
       padding: 0;
     }
-    
+
     a {
       color: #00573b;
       text-decoration: none;
     }
-    
+
     /* Accordion Main */
     h1 {
       color: #FFF;
@@ -171,12 +174,12 @@ var flkty = new Flickity(carousel, {
       text-align: center;
       margin-top: 80px;
     }
-    
+
     h1 a {
       color: #00573b;
       font-size: 16px;
     }
-    
+
     .accordion1 {
       width: 100%;
       max-width: 2000px;
@@ -184,44 +187,44 @@ var flkty = new Flickity(carousel, {
       overflow: hidden;
       margin: 0;
     }
-           
+
     .accordion1 .link {
       display: flex;
       flex-direction: column;
-      align-items: center; 
+      align-items: center;
       justify-content: center;
       padding: 25px 42px;
       position: relative;
       transition: all 0.7s ease;
     }
-  
+
     .accordion1 .link img {
       margin-bottom: 10px;
-      transition: all 0.2s ease-in-out; 
+      transition: all 0.2s ease-in-out;
     }
-  
+
     .accordion1 .link:hover img {
-      transform: scale(1.3); 
+      transform: scale(1.3);
     }
 
     .accordion1 li.open .link img {
       transform: scale(1.3);
     }
-  
+
     .accordion1 .link > div {
       display: flex;
       align-items: center;
       flex-grow: 1;
       justify-content: space-between;
     }
-    
+
     .accordion1 .link p {
       margin: 0;
       max-height: 60%;
       text-align: center;
       position: relative;
     }
-    
+
     .accordion1 .link p::after {
       content: "";
       display: block;
@@ -234,11 +237,11 @@ var flkty = new Flickity(carousel, {
       transition: width 0.8s ease;
       transform: translateX(-50%);
     }
-  
+
     .accordion1 li.open .link p::after {
       width: 120%;
     }
-  
+
     .accordion1 li i {
       position: absolute;
       top: 50%;
@@ -248,34 +251,34 @@ var flkty = new Flickity(carousel, {
       color: #1a1a1a;
       transition: all 0.4s ease;
     }
-         
+
     .accordion1 li:last-child .link {
       border-bottom: 0;
     }
-   
+
     .accordion1 li i.fa-chevron-down {
       font-size: 0px;
     }
-    
+
     .accordion1 li.open .link {
       color: #00573b;
-      transform: scale(1.3); 
+      transform: scale(1.3);
     }
-    
+
     .accordion1 li.open i {
       color: #00573b;
     }
-    
+
     .accordion1 li.open i.fa-chevron-down {
       transform: rotate(180deg);
     }
-     
+
     /* Submenu */
-    
+
     .accordion1-container {
       width: 100%;
     }
-    
+
     .submenu1 {
       position: relative;
       text-align: center;
@@ -284,12 +287,12 @@ var flkty = new Flickity(carousel, {
       font-size: 13px;
       max-width: 100%;
     }
-    
+
     .submenu1 li {
       border-bottom: 1px solid #4b4a5e;
       text-align: center;
     }
-    
+
     .submenu1 a {
       display: block;
       text-decoration: none;
@@ -298,7 +301,7 @@ var flkty = new Flickity(carousel, {
       padding-left: 42px;
       transition: all 0.25s ease;
     }
-    
+
     .submenu1 a:hover {
       background: #00573b;
       color: #FFF;
@@ -358,7 +361,7 @@ $(function() {
         <p><b>IT ServiceDesk</b></p>
       </div>
       <ul class="submenu1" style="font-size: 15px;"><br>
-        <p><u><b>Primary objective</b></u> – The main goal of our ServiceDesk is to provide IT support services for all Oldcastle APG employees. Help desk employees complete tickets that have been assigned to them, as well as, log and enter a ticket for anything IT support related that they completed. Through this goal we have seen a reduction in incidents within the company as a whole and have cut down on IT related issues. 
+        <p><u><b>Primary objective</b></u> – The main goal of our ServiceDesk is to provide IT support services for all Oldcastle APG employees. Help desk employees complete tickets that have been assigned to them, as well as, log and enter a ticket for anything IT support related that they completed. Through this goal we have seen a reduction in incidents within the company as a whole and have cut down on IT related issues.
           <br></br>
           <u><b>Experience</b></u> – Having never used or even heard of Snow, I took some beginner courses. Through this, I gained the ability to navigate within Snow and some confidence in my ability within the environment. With great mentors, I learned how to handle tickets, appropriate protocols, set up new employee workstations, and many different tips on how to handle the IT support side of Oldcastle APG. It was great and insightful to see how far an IT helpdesk has come.
           <br></br>
@@ -406,7 +409,7 @@ $(function() {
         <p><b>Asset Management</b></p>
       </div>
       <ul class="submenu1" style="font-size: 15px;"><br>
-        <p><b><u>Primary objective</u></b> – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware assets tracked within snow. 
+        <p><b><u>Primary objective</u></b> – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware assets tracked within snow.
           <br></br>
           <b><u>Experience</u></b> – Whenever I had some free time Nicole had me work with Matt’s team in Asset Management. We would go through and verify System Center Configuration Manager (SCCM) data and match it up with the user. Then transfer this information over to the new procurement sheet. Once everything was confirmed, I would input tags into SNOW and assign a new hardware asset (Make, Model, etc.) to that specific user. <b><u>This may seem simple, but up until now there have been a large portion of errors (Assigned to, Location, and Model Numbers) along with very minimal tracking.</u></b> It was a great experience to see how we can better track and verify where all of our hardware assets are.
           <br></br>
@@ -462,7 +465,7 @@ $(function() {
       <ul class="submenu1" style="font-size: 15px;"><br>
         <p><b>•	Great experience.<br>
           •	Important/fulfilling work.<br>
-          •	Valuable meetings/tours to learn about Oldcastle and our mission.<br>  
+          •	Valuable meetings/tours to learn about Oldcastle and our mission.<br>
           •	Great culture within the company.<br>
           •	Very insightful to learn and work with many different areas and teams.<br>
         <br></br>

@@ -1,4 +1,3 @@
-
 /* Navbar */
 .custom-navbar {
   background-image: url(../assets/images/background/navbarbackground-transformed.jpeg);
@@ -48,13 +47,18 @@
   z-index: 2;
 }
 
-.navbar-nav.mr-auto {
+/* Center the logo */
+.navbar-brand {
+  margin-left: auto;
   margin-right: auto;
 }
 
-.navbar-nav.ml-auto {
-  margin-left: auto;
+/* Move the links right next to the logo */
+.navbar-nav {
+  margin-left: 20px; /* Add some margin to separate the links from the logo */
+  margin-right: 20px;
 }
+
 
     /*Hero Slider*/
     
