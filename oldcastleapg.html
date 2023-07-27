@@ -22,33 +22,37 @@
 <!--Page Value-->
 <body id="oldcastleapg" onload="checkPages()">
 
-<!--Navbar-->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
-      <div class="container-fluid d-flex justify-content-center align-items-center">
-        <!-- Links -->
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar" style="height: 80px;">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+      <!-- Links on the Left -->
+      <div class="navbar-left-links">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link current-page" style="font-size: 22px;" data-active="index" href="./index.html">My Internship</a>
           </li>
         </ul>
-        
-        <!-- Logo -->
-        <div class="navbar-brand mx-3">
-          <a href="./index.html">
-            <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
-              style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
-          </a>
-        </div>
-  
-        <!-- Links -->
+      </div>
+
+      <!-- Logo in the Center -->
+      <div class="navbar-brand mx-3">
+        <a href="./index.html">
+          <img src="./assets/images/logos/headshotlogo.png" width="120" height="120" class="rounded-circle"
+            style="border: 1px solid black; box-shadow: 0 0 8px #ffffffd3;">
+        </a>
+      </div>
+
+      <!-- Links on the Right -->
+      <div class="navbar-right-links">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" style="font-size: 22px;" data-active="oldcastleapg" href="./oldcastleapg.html">Oldcastle APG</a>
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <!--Hero Slider-->
     <div class="hero-slider" data-flickity>
@@ -115,7 +119,7 @@ var flkty = new Flickity(carousel, {
 <div class="divider"><span></span><span><div class="logo"><img src="./assets/images/logos/newfavicon.webp" width="60" height="60"></div></span><span></span></div>
   
 <style>
-  Styles for Accordion
+  /* Styles for Accordion */
   .container2 {
     display: flex;
     flex-direction: row;
@@ -301,7 +305,8 @@ var flkty = new Flickity(carousel, {
   font-weight: 900;
   font-size: 17px;
 }
-/* Mobile-specific styles */
+
+   /* Mobile-specific styles */
 @media screen and (max-width: 767px) {
   /* Default font size for better readability on mobile */
   body {
@@ -340,11 +345,20 @@ var flkty = new Flickity(carousel, {
   }
 
   .submenu {
+    position: static;
+    
+    width: 100%; /* Take full width on mobile */
+    left: 0; /* Reset the horizontal position on mobile */
+    right: 0;
+    transform: none; /* Reset the translation on mobile */
+    padding: 5px 10px; /* Adjust padding for better touch target on mobile */
     display: none; /* Hide submenu by default on mobile */
     background: #fff; /* Add background color to improve visibility on mobile */
     border-top: 1px solid #4b4a5e; /* Add a border to separate submenus on mobile */
     margin-top: 10px; /* Add some space between the link and submenu on mobile */
-    position: relative; /* Change position to relative to keep the submenu in the flow */
+    position: absolute; /* Position submenu absolutely */
+    top: 100%; /* Place the submenu below the link */
+    z-index: 1; /* Ensure the submenu appears above other content */
   }
 
   .submenu li {
@@ -364,73 +378,89 @@ var flkty = new Flickity(carousel, {
   }
 
   /* Expand the submenu when link is clicked */
-  .accordion-2 .link.open + .submenu {
+  .accordion-2 .link.open .submenu {
     display: block;
   }
 }
+
 </style>
 
 <script>
-  $(document).ready(function() {
-    // Function to handle submenu toggle
-    function toggleSubmenu($link) {
-      $link.toggleClass('open');
-      $link.next('.submenu').slideToggle();
-    }
+ // Mobile Accordion
+ var MobileAccordion = function (el) {
+    this.el = el || {};
 
-    // Function to handle submenu toggle on mobile
-    function toggleSubmenuMobile($link) {
-      if (window.matchMedia('(max-width: 767px)').matches) {
-        $link.toggleClass('open');
-        $link.next('.submenu').slideToggle();
+    // Open the submenus by default on mobile
+    var submenus = this.el.find('.submenu');
+    submenus.slideDown();
+    submenus.parent().addClass('open');
+    submenus.prev('.link').find('img').addClass('active');
 
-        // Hide other open submenus
-        $('.link').not($link).removeClass('open');
-        $('.submenu').not($link.next('.submenu')).slideUp();
-      }
-    }
+    var links = this.el.find('.link');
+    links.on('click', { el: this.el, multiple: true }, this.dropdown);
+  };
 
-    // Click event for accordion links on PC
-    $('.accordion-2 .link').click(function(e) {
-      if ($(e.target).is('img')) {
-        // If the click is on the image, prevent the default link behavior
-        e.preventDefault();
-      }
+  // Accordion
+  $(function () {
+    var Accordion2 = function (el, multiple) {
+      this.el = el || {};
+      this.multiple = multiple || false;
 
-      // Toggle the submenu
-      toggleSubmenu($(this));
+      var isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-      // Hide other open submenus on PC
-      $('.link').not(this).removeClass('open');
-      $('.submenu').not($(this).next('.submenu')).slideUp();
-    });
+      if (isMobile) {
+        var mobileAccordion = new MobileAccordion(this.el);
+      } else {
+        var links = this.el.find('.link');
+        links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
 
-    // Click event for accordion links on mobile
-    $('.accordion-2 .link').click(function(e) {
-      if ($(e.target).is('img')) {
-        // If the click is on the image, prevent the default link behavior
-        e.preventDefault();
-      }
-
-      // Toggle the submenu on mobile
-      toggleSubmenuMobile($(this));
-    });
-
-    // Open the first submenu by default only on PC
-    function openFirstSubmenuOnPC() {
-      if (window.matchMedia('(min-width: 768px)').matches) {
-        var firstSubmenu = $('.accordion-2 .submenu').first();
-        var firstLink = firstSubmenu.prev('.link');
-
+        // Open the first submenu by default on page load (for desktop)
+        var firstSubmenu = this.el.find('.submenu').first();
         firstSubmenu.slideDown();
-        firstLink.addClass('open');
+        firstSubmenu.parent().addClass('open');
+        firstSubmenu.prev('.link').find('img').addClass('active');
+      }
+    };
+
+    Accordion2.prototype.dropdown = function (e) {
+      var $el = e.data.el;
+      var $this = $(this);
+      var $submenu = $this.next('.submenu');
+
+      $submenu.slideToggle();
+      $this.parent().toggleClass('open');
+      $this.find('img').toggleClass('active');
+
+      if (!e.data.multiple) {
+        // Close other submenus and remove 'active' class from their images
+        var $siblings = $this.parent().siblings();
+        $siblings.removeClass('open');
+        $siblings.find('.submenu').slideUp();
+        $siblings.find('img').removeClass('active');
+      }
+    };
+
+    var accordion2 = new Accordion2($('#accordion'), false);
+
+    // Function to handle footer positioning when submenus extend past the container
+    function adjustFooterPosition() {
+      var containerHeight = $('.container2').outerHeight();
+      var windowHeight = $(window).height();
+      var footerHeight = $('.footer').outerHeight();
+
+      if (containerHeight > windowHeight - footerHeight) {
+        $('.footer').css('position', 'static');
+      } else {
+        $('.footer').css('position', 'fixed');
       }
     }
 
-    // Call the function to open the first submenu on PC
-    openFirstSubmenuOnPC();
+    // Call the adjustFooterPosition function on page load and when the window is resized
+    adjustFooterPosition();
+    $(window).resize(adjustFooterPosition);
   });
 </script>
+
 </head>
 
 <body>
