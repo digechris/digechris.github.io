@@ -302,72 +302,85 @@ var flkty = new Flickity(carousel, {
   font-size: 17px;
 }
 
-@media screen and (max-width: 767px) {
-   /* Default font size for better readability on mobile */
-body {
-  font-size: 16px;
-}
+  @media screen and (max-width: 767px) {
+      /* Default font size for better readability on mobile */
+      body {
+        font-size: 16px;
+      }
 
-/* Navbar (same as before) */
+      /* Navbar (same as before) */
 
-/* Accordion */
-.container2 {
-  display: flex;
-  flex-direction: column; /* Stack items vertically on mobile */
-  align-items: center; /* Center items horizontally on mobile */
-  padding: 10px; /* Add some space around the container on mobile */
-}
+      /* Accordion */
+      .container2 {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center; /* Center items horizontally on mobile */
+        padding: 10px; /* Add some space around the container on mobile */
+      }
 
-.accordion-2 {
-  width: 100%; /* Take full width on mobile */
-  max-width: 100%; /* Make sure the accordion doesn't overflow */
-  margin: 0;
-}
+      .accordion-2 {
+        width: 100%; /* Take full width on mobile */
+        max-width: 100%; /* Make sure the accordion doesn't overflow */
+        margin: 0;
+      }
 
-.accordion-2 .link {
-  padding: 15px 20px; /* Adjust padding for better touch target on mobile */
-  color: #00573b;
-  display: flex; /* Align link and image horizontally on mobile */
-  align-items: center; /* Center link and image vertically on mobile */
-  width: 100%; /* Make sure the link takes full width on mobile */
-}
+      .accordion-2 .link {
+        padding: 15px 20px; /* Adjust padding for better touch target on mobile */
+        color: #00573b;
+        display: flex; /* Align link and image horizontally on mobile */
+        align-items: center; /* Center link and image vertically on mobile */
+        justify-content: space-between; /* Add space between link and submenu icon */
+        width: 100%; /* Make sure the link takes full width on mobile */
+        cursor: pointer; /* Change cursor to indicate link is clickable */
+      }
 
-.accordion-2 .link img {
-  max-width: 100px; /* Adjust the image size on mobile */
-  height: auto; /* Maintain the image's aspect ratio */
-  margin-right: 10px; /* Add some space between link and image on mobile */
-  transform: scale(1.2); /* Always show images expanded on mobile */
-}
+      .accordion-2 .link img {
+        max-width: 80px; /* Adjust the image size on mobile */
+        height: auto; /* Maintain the image's aspect ratio */
+        margin-right: 10px; /* Add some space between link and image on mobile */
+        transform: scale(1.2); /* Always show images expanded on mobile */
+      }
 
-.submenu {
-  width: 100%; /* Take full width on mobile */
-  left: 0; /* Reset the horizontal position on mobile */
-  right: 0;
-  transform: none; /* Reset the translation on mobile */
-  padding: 5px 10px; /* Adjust padding for better touch target on mobile */
-  display: block; /* Always show submenu on mobile */
-  background: #fff; /* Add background color to improve visibility on mobile */
-  border-top: 1px solid #4b4a5e; /* Add a border to separate submenus on mobile */
-  margin-top: 10px; /* Add some space between the link and submenu on mobile */
-}
+      .submenu {
+        width: 100%; /* Take full width on mobile */
+        left: 0; /* Reset the horizontal position on mobile */
+        right: 0;
+        transform: none; /* Reset the translation on mobile */
+        padding: 5px 10px; /* Adjust padding for better touch target on mobile */
+        display: none; /* Hide submenu by default on mobile */
+        background: #fff; /* Add background color to improve visibility on mobile */
+        border-top: 1px solid #4b4a5e; /* Add a border to separate submenus on mobile */
+        margin-top: 10px; /* Add some space between the link and submenu on mobile */
+      }
 
-.submenu li {
-  display: block; /* Display items in a block on mobile for better spacing */
-  margin: 10px 0; /* Add some space between submenu items on mobile */
-}
+      .submenu li {
+        display: block; /* Display items in a block on mobile for better spacing */
+        margin: 10px 0; /* Add some space between submenu items on mobile */
+      }
 
-.submenu a {
-  font-size: 18px; /* Adjust text size for better readability on mobile */
-  padding: 8px; /* Adjust padding for better touch target on mobile */
-}
+      .submenu a {
+        font-size: 18px; /* Adjust text size for better readability on mobile */
+        padding: 8px; /* Adjust padding for better touch target on mobile */
+      }
 
-.submenu-logo {
-  font-size: 20px; /* Adjust text size for submenu logos on mobile */
-  font-weight: 600; /* Make the submenu logo text bold on mobile */
-  margin-bottom: 10px; /* Add some space below the submenu logo on mobile */
-}
+      .submenu-logo {
+        font-size: 20px; /* Adjust text size for submenu logos on mobile */
+        font-weight: 600; /* Make the submenu logo text bold on mobile */
+        margin-bottom: 10px; /* Add some space below the submenu logo on mobile */
+      }
 
-}
+      /* Clear the float of the link on mobile */
+      @media screen and (max-width: 767px) {
+        .accordion-2 .link {
+          clear: both;
+        }
+      }
+      
+      /* Expand the submenu when link is clicked */
+      .accordion-2 .link.open .submenu {
+        display: block;
+      }
+    }
 
 
 </style>
