@@ -381,7 +381,7 @@ var flkty = new Flickity(carousel, {
 </style>
 
 <script>
-   $(document).ready(function() {
+  $(document).ready(function() {
     // Check if the window width is less than 768px (mobile)
     function isMobile() {
       return window.innerWidth < 768;
@@ -410,46 +410,9 @@ var flkty = new Flickity(carousel, {
       if (!isMobile()) {
         // Reset styles for larger screens
         $('.accordion-2 .link').removeClass('open');
-        $('.accordion-2 .submenu').removeAttr('style');
+        $('.submenu').removeAttr('style');
       }
     });
-  });
-  
-  // Accordion
-  $(function () {
-    var Accordion2 = function (el, multiple) {
-      this.el = el || {};
-      this.multiple = multiple || false;
-
-      var links = this.el.find('.link');
-      links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
-
-      // Open the first submenu by default on page load
-      var firstSubmenu = this.el.find('.submenu').first();
-      firstSubmenu.slideDown();
-      firstSubmenu.parent().addClass('open');
-      firstSubmenu.prev('.link').find('img').addClass('active');
-    };
-
-    Accordion2.prototype.dropdown = function (e) {
-      var $el = e.data.el;
-      var $this = $(this);
-      var $submenu = $this.next('.submenu');
-
-      $submenu.slideToggle();
-      $this.parent().toggleClass('open');
-      $this.find('img').toggleClass('active');
-
-      if (!e.data.multiple) {
-        // Close other submenus and remove 'active' class from their images
-        var $siblings = $this.parent().siblings();
-        $siblings.removeClass('open');
-        $siblings.find('.submenu').slideUp();
-        $siblings.find('img').removeClass('active');
-      }
-    };
-
-    var accordion2 = new Accordion2($('#accordion'), false);
   });
 </script>
 </head>
