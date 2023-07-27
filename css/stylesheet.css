@@ -354,14 +354,14 @@
 /* Mobile styles */
 @media screen and (max-width: 600px) {
   /* Navbar */
-  .navbar-nav {
+  .nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  .navbar-nav .nav-link {
+  .nav-link {
     font-size: 8px;
     text-align: center; /* Center the text for mobile */
     margin-bottom: 10px;
