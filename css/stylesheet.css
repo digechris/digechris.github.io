@@ -63,21 +63,23 @@
 
 /* Reduce font size of links on mobile */
 @media (max-width: 767px) {
-  .navbar-nav .nav-link {
-    flex-direction: column;
+  /* Adjust the navbar links to be next to the logo */
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand,
+  .navbar-nav {
+    margin: 5px;
+  }
+
+  .navbar-nav .nav-link {
     font-size: 8px;
-}
-
-.navbar-brand,
-.navbar-nav {
-  margin: 5px;
-}
-
-.navbar-nav .nav-link {
-  font-size: 8px;
-  text-align: center;
-}
+    text-align: center;
+  }
 }
 
     /*Hero Slider*/
