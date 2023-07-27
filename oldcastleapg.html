@@ -371,14 +371,26 @@ var flkty = new Flickity(carousel, {
 </style>
 
 <script>
-$(document).ready(function() {
+  $(document).ready(function() {
     // Function to handle submenu toggle
     function toggleSubmenu($link) {
       $link.toggleClass('open');
       $link.next('.submenu').slideToggle();
     }
 
-    // Click event for accordion links
+    // Function to handle submenu toggle on mobile
+    function toggleSubmenuMobile($link) {
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        $link.toggleClass('open');
+        $link.next('.submenu').slideToggle();
+
+        // Hide other open submenus
+        $('.link').not($link).removeClass('open');
+        $('.submenu').not($link.next('.submenu')).slideUp();
+      }
+    }
+
+    // Click event for accordion links on PC
     $('.accordion-2 .link').click(function(e) {
       if ($(e.target).is('img')) {
         // If the click is on the image, prevent the default link behavior
@@ -388,9 +400,20 @@ $(document).ready(function() {
       // Toggle the submenu
       toggleSubmenu($(this));
 
-      // Hide other open submenus
+      // Hide other open submenus on PC
       $('.link').not(this).removeClass('open');
       $('.submenu').not($(this).next('.submenu')).slideUp();
+    });
+
+    // Click event for accordion links on mobile
+    $('.accordion-2 .link').click(function(e) {
+      if ($(e.target).is('img')) {
+        // If the click is on the image, prevent the default link behavior
+        e.preventDefault();
+      }
+
+      // Toggle the submenu on mobile
+      toggleSubmenuMobile($(this));
     });
 
     // Open the first submenu by default only on PC
