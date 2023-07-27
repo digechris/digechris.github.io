@@ -341,6 +341,7 @@ var flkty = new Flickity(carousel, {
   }
 
   .submenu {
+    position: static;
     width: 100%; /* Take full width on mobile */
     left: 0; /* Reset the horizontal position on mobile */
     right: 0;
@@ -380,6 +381,40 @@ var flkty = new Flickity(carousel, {
 </style>
 
 <script>
+   $(document).ready(function() {
+    // Check if the window width is less than 768px (mobile)
+    function isMobile() {
+      return window.innerWidth < 768;
+    }
+
+    // Function to handle submenu toggle on mobile
+    function toggleSubmenu($link) {
+      $link.toggleClass('open');
+      $link.next('.submenu').slideToggle();
+    }
+
+    // Click event for accordion links
+    $('.accordion-2 .link').click(function() {
+      if (isMobile()) {
+        // Toggle the submenu only on mobile
+        toggleSubmenu($(this));
+
+        // Hide other open submenus
+        $('.link').not(this).removeClass('open');
+        $('.submenu').not($(this).next('.submenu')).slideUp();
+      }
+    });
+
+    // Check window resize to handle submenu behavior on mobile
+    $(window).resize(function() {
+      if (!isMobile()) {
+        // Reset styles for larger screens
+        $('.accordion-2 .link').removeClass('open');
+        $('.accordion-2 .submenu').removeAttr('style');
+      }
+    });
+  });
+  
   // Accordion
   $(function () {
     var Accordion2 = function (el, multiple) {
