@@ -365,12 +365,22 @@
     font-size: 8px;
     text-align: center;
   }
+
+  .accordion-2 .link {
+    width: 1000px;
+  }
+
   .accordion-2 .link img {
     width: 50px;
     height: 40px;
   }
 
+
   /* Submenu */
+  .submenu {
+    width: 100%;
+  }
+
   .submenu-logo {
     font-size: 5px;
   }
