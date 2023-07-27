@@ -351,8 +351,8 @@
             height: 75px;
           }
 
-          /* Mobile styles */
-@media (max-width: 767px) {
+/* Mobile styles */
+@media screen and (max-width: 600px) {
   /* Navbar */
   .navbar-nav {
     display: flex;
@@ -364,6 +364,33 @@
   .navbar-nav .nav-link {
     font-size: 8px;
     text-align: center;
+  }
+  .accordion-2 .link img {
+    width: 50px;
+    height: 40px;
+  }
+
+  /* Submenu */
+  .submenu-logo {
+    font-size: 5px;
+  }
+
+  .submenu li {
+    display: block;
+    margin: 0px;
+  }
+
+  .submenu a {
+    font-size: 5px;
+  }
+
+  .submenu img {
+    width: 10px;
+    height: auto;
+  }
+
+  .submenu p {
+    font-size: 5px;
   }
 
 }
