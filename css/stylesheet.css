@@ -36,7 +36,7 @@
 
   .custom-navbar .nav-link {
     font-size: 17px !important; /* Adjust the font size for the links on mobile */
-    padding: 5px;
+    padding: 2px;
   }
 
   .circle-image {
