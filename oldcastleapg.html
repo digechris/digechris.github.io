@@ -302,26 +302,36 @@ var flkty = new Flickity(carousel, {
   font-size: 17px;
 }
 
-/* Add this media query to adjust submenu logo text on mobile
+/* Add this media query to adjust submenu logo text on mobile */
 @media (max-width: 767px) {
   .accordion-2 .link img {
     width: 50px;
     height: 40px;
   }
 
-  .accordion-2 .link p {
-    font-size: 12px;
+  /* Submenu */
+  .submenu-logo {
+    font-size: 5px;
   }
 
-  ul#accordion .submenu .submenu-logo {
-    font-size: 12px;
+  .submenu li {
+    display: block;
+    margin: 0px;
   }
 
   .submenu a {
-    font-size: 12px;
+    font-size: 5px;
   }
-} */
 
+  .submenu img {
+    width: 10px;
+    height: auto;
+  }
+
+  .submenu p {
+    font-size: 5px;
+  }
+}
 </style>
 
 <script>
