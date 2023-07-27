@@ -314,34 +314,66 @@ var flkty = new Flickity(carousel, {
 
 
 <script>
-// Accordian
-$(function() {
-    var Accordion1 = function(el, multiple) {
-      this.el = el || {};
-      this.multiple = multiple || false;
+ // Accordion1 (Mobile Accordion)
+ var Accordion1 = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
 
-      var links = this.el.find('.link');
-      links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
-    };
+    var links = this.el.find('.link');
+    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
+  };
 
-    Accordion1.prototype.dropdown = function(e) {
-      var $el = e.data.el;
-      $this = $(this),
-      $next = $this.next();
+  Accordion1.prototype.dropdown = function(e) {
+    var $el = e.data.el;
+    $this = $(this),
+    $next = $this.next();
 
-      $next.slideToggle();
-      $this.parent().toggleClass('open');
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
 
-      // Add or remove the 'active' class on the image
-      $this.find('img').toggleClass('active');
+    // Add or remove the 'active' class on the image
+    $this.find('img').toggleClass('active');
 
-      if (!e.data.multiple) {
-        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-        $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
-      }
-    };
+    if (!e.data.multiple) {
+      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+      $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
+    }
+  };
 
+  // Call the Accordion1 function for mobile accordion when the document is ready
+  $(document).ready(function() {
     var accordion1 = new Accordion1($('#accordion'), false);
+  });
+
+  // Accordion2 (PC Accordion)
+  var Accordion2 = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
+
+    var links = this.el.find('.link');
+    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
+  };
+
+  Accordion2.prototype.dropdown = function(e) {
+    var $el = e.data.el;
+    $this = $(this),
+    $next = $this.next();
+
+    $next.slideToggle();
+    $this.parent().toggleClass('open');
+
+    // Add or remove the 'active' class on the image
+    $this.find('img').toggleClass('active');
+
+    if (!e.data.multiple) {
+      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+      $el.find('.link img').not($this.find('img')).removeClass('active'); // Remove the class from other images
+    }
+  };
+
+  // Call the Accordion2 function for PC accordion when the document is ready
+  $(document).ready(function() {
+    var accordion2 = new Accordion2($('#accordion-pc'), false);
   });
 
 </script>

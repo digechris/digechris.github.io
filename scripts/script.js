@@ -14,5 +14,3 @@ function checkPages() {
 }
 // Call the function to check the active page on page load
 checkPages();
-
-
