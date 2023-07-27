@@ -49,16 +49,24 @@
 
 /* Center the logo */
 .navbar-brand {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
-/* Move the links right next to the logo */
+/* Move the links to either side of the logo */
 .navbar-nav {
+  display: flex;
+  align-items: center;
   margin-left: 20px; /* Add some margin to separate the links from the logo */
-  margin-right: 20px;
+  margin-right: 20px; /* Add some margin to separate the links from the logo */
 }
 
+/* Reduce font size of links on mobile */
+@media (max-width: 767px) {
+  .navbar-nav .nav-link {
+    font-size: 16px;
+  }
+}
 
     /*Hero Slider*/
     
