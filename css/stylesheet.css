@@ -326,15 +326,60 @@
   .footer-menu ul li a:hover {
     color: #05d694;
   }
-  
-  @media (max-width: 500px) {
-    .footer-menu ul {
-      display: flex;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
+
+  /* Mobile-specific styles for phones (max-width: 500px) */
+@media (max-width: 500px) {
+  /* Reset padding and margin for the body, html, and other elements */
+  body, html, div, ul, li, a {
+    padding: 0;
+    margin: 0;
   }
-  
+
+  .footer {
+    /* Add more padding at the bottom of the entire footer */
+    padding-bottom: 60px;
+    text-align: center; /* Center the menu items horizontally */
+    background-image: linear-gradient(#00573b 0%, black 100%, #00573b 0%);
+  }
+
+  .footer-menu {
+    text-align: center; /* Center the menu items horizontally */
+    padding: 0; /* Remove padding to fill the whole footer menu */
+  }
+
+  .footer-menu ul {
+    display: flex; /* Make the menu items stack horizontally */
+    justify-content: center; /* Center the menu items horizontally */
+    padding: 0; /* Remove padding to fill the whole footer menu */
+    list-style: none; /* Remove the default list style */
+    margin: 0; /* Remove any margin to eliminate white space */
+  }
+
+  .footer-menu ul li {
+    display: inline-block; /* Make the menu items stack horizontally */
+    padding-right: 10px;
+    flex: 1; /* Allow the links to take equal space and fill the container */
+    text-align: center; /* Center the text within each link */
+  }
+
+  .footer-menu ul li a {
+    color: #00573b;
+    text-decoration: none;
+    padding: 10px; /* Add some padding for better touch target */
+    display: block; /* Ensure the links take up the full width */
+    width: 100%; /* Ensure the links take up the full width */
+  }
+
+  .footer-menu ul li a:hover {
+    color: #05d694;
+  }
+
+  /* Add more padding at the bottom of the footer content */
+  .footer-bottom {
+    padding-bottom: 40px;
+  }
+}
+
   
   /*Divider*/
   body { background: rgb(255, 255, 255); }
