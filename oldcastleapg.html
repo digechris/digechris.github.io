@@ -382,37 +382,40 @@ var flkty = new Flickity(carousel, {
 
 <script>
   $(document).ready(function() {
-    // Check if the window width is less than 768px (mobile)
-    function isMobile() {
-      return window.innerWidth < 768;
-    }
-
-    // Function to handle submenu toggle on mobile
+    // Function to handle submenu toggle
     function toggleSubmenu($link) {
       $link.toggleClass('open');
       $link.next('.submenu').slideToggle();
     }
 
     // Click event for accordion links
-    $('.accordion-2 .link').click(function() {
-      if (isMobile()) {
-        // Toggle the submenu only on mobile
-        toggleSubmenu($(this));
-
-        // Hide other open submenus
-        $('.link').not(this).removeClass('open');
-        $('.submenu').not($(this).next('.submenu')).slideUp();
+    $('.accordion-2 .link').click(function(e) {
+      if ($(e.target).is('img')) {
+        // If the click is on the image, prevent the default link behavior
+        e.preventDefault();
       }
+
+      // Toggle the submenu
+      toggleSubmenu($(this));
+
+      // Hide other open submenus
+      $('.link').not(this).removeClass('open');
+      $('.submenu').not($(this).next('.submenu')).slideUp();
     });
 
-    // Check window resize to handle submenu behavior on mobile
-    $(window).resize(function() {
-      if (!isMobile()) {
-        // Reset styles for larger screens
-        $('.accordion-2 .link').removeClass('open');
-        $('.submenu').removeAttr('style');
+    // Open the first submenu by default only on PC
+    function openFirstSubmenuOnPC() {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        var firstSubmenu = $('.accordion-2 .submenu').first();
+        var firstLink = firstSubmenu.prev('.link');
+
+        firstSubmenu.slideDown();
+        firstLink.addClass('open');
       }
-    });
+    }
+
+    // Call the function to open the first submenu on PC
+    openFirstSubmenuOnPC();
   });
 </script>
 </head>
