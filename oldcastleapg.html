@@ -339,7 +339,7 @@ var flkty = new Flickity(carousel, {
   }
 
   .accordion-2 .link img {
-    max-width: 80px; /* Adjust the image size on mobile */
+    max-width: 120px; /* Adjust the image size on mobile */
     height: auto; /* Maintain the image's aspect ratio */
     margin-right: 10px; /* Add some space between link and image on mobile */
     transform: scale(1.2); /* Always show images expanded on mobile */
@@ -352,9 +352,8 @@ var flkty = new Flickity(carousel, {
   .submenu {
     position: static;
     width: 100%; /* Take full width on mobile */
-    left: 0; /* Reset the horizontal position on mobile */
-    right: 0;
-    transform: none; /* Reset the translation on mobile */
+    left: 50%; /* Center the submenu */
+    transform: translateX(-50%); /* Center the submenu */
     padding: 5px 10px; /* Adjust padding for better touch target on mobile */
     display: block; /* Show submenu by default on mobile */
     background: #fff; /* Add background color to improve visibility on mobile */
@@ -363,22 +362,30 @@ var flkty = new Flickity(carousel, {
     position: relative; /* Remove absolute positioning for submenu */
     top: 0; /* Reset the top position for submenu */
     z-index: 1; /* Ensure the submenu appears above other content */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to new rows */
+    justify-content: center; /* Center items horizontally within the submenu */
+    align-items: center; /* Center items vertically within the submenu */
   }
 
   .submenu li {
-    display: block; /* Display items in a block on mobile for better spacing */
-    margin: 10px 0; /* Add some space between submenu items on mobile */
+    display: flex; /* Display items as flex items */
+    flex-direction: column; /* Stack items vertically within flex container */
+    align-items: center; /* Center items horizontally within flex container */
+    margin: 10px; /* Add some spacing between submenu items on mobile */
+    flex-basis: calc(33.33% - 20px); /* Three items per row, with some spacing */
   }
 
   .submenu li a img {
     max-width: 60px; /* Adjust the image size as needed */
     height: auto; /* Maintain the image's aspect ratio */
-    margin-right: 10px;
+    margin-bottom: 10px; /* Add a line break after the image */
   }
 
   .submenu a {
     font-size: 18px; /* Adjust text size for better readability on mobile */
     padding: 8px; /* Adjust padding for better touch target on mobile */
+    text-align: center; /* Center the text within the submenu item */
   }
 
   .submenu-logo {
@@ -386,13 +393,7 @@ var flkty = new Flickity(carousel, {
     font-weight: 600; /* Make the submenu logo text bold on mobile */
     margin-bottom: 10px; /* Add some space below the submenu logo on mobile */
   }
-
-  /* Remove expand behavior for mobile */
-  .accordion-2 .link.open .submenu {
-    display: block;
-  }
 }
-
 </style>
 
 <script>
@@ -479,10 +480,8 @@ $(document).ready(function () {
               <br></br>
               <p>
                 Oldcastle APG is the largest manufacturer of architectural building products in North America. Our family of brands come together to create the complete exterior environment. From stadiums to outdoor kitchens, we lead the industry in quality and drive the design trends that affect how people live in residential and commercial spaces.
-              </p>
               <div class="submenu-logo">"Home" doesn't have to mean indoors.</div>
               <br>
-              <p>
               <img src="./assets/images/presentation/adams-west.jpg" width="185" height="145"></img>  
               </p>
             </li>
