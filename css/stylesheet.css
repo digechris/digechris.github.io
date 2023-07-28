@@ -348,7 +348,6 @@
   }
 
   .footer-menu ul {
-    /* Change to block to stack menu items vertically on mobile */
     display: block;
     padding: 0; /* Remove padding to fill the whole footer menu */
     list-style: none; /* Remove the default list style */
