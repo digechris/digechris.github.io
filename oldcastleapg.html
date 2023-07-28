@@ -176,6 +176,7 @@ var flkty = new Flickity(carousel, {
     position: relative;
     transition: all 0.3s ease;
     z-index: 3;
+    cursor: pointer;
   }
 
   .accordion-2 .link img {
@@ -344,9 +345,12 @@ var flkty = new Flickity(carousel, {
     transform: scale(1.2); /* Always show images expanded on mobile */
   }
 
+  .accordion-2 .link i {
+    display: none;
+  }
+
   .submenu {
     position: static;
-    
     width: 100%; /* Take full width on mobile */
     left: 0; /* Reset the horizontal position on mobile */
     right: 0;
@@ -364,6 +368,12 @@ var flkty = new Flickity(carousel, {
   .submenu li {
     display: block; /* Display items in a block on mobile for better spacing */
     margin: 10px 0; /* Add some space between submenu items on mobile */
+  }
+
+  .submenu li a img {
+    max-width: 60px; /* Adjust the image size as needed */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin-right: 10px;
   }
 
   .submenu a {
@@ -386,78 +396,42 @@ var flkty = new Flickity(carousel, {
 </style>
 
 <script>
- // Mobile Accordion
- var MobileAccordion = function (el) {
-    this.el = el || {};
-
-    // Open the submenus by default on mobile
-    var submenus = this.el.find('.submenu');
-    submenus.slideDown();
-    submenus.parent().addClass('open');
-    submenus.prev('.link').find('img').addClass('active');
-
-    var links = this.el.find('.link');
-    links.on('click', { el: this.el, multiple: true }, this.dropdown);
-  };
-
-  // Accordion
-  $(function () {
-    var Accordion2 = function (el, multiple) {
-      this.el = el || {};
-      this.multiple = multiple || false;
-
-      var isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-      if (isMobile) {
-        var mobileAccordion = new MobileAccordion(this.el);
-      } else {
-        var links = this.el.find('.link');
-        links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
-
-        // Open the first submenu by default on page load (for desktop)
-        var firstSubmenu = this.el.find('.submenu').first();
-        firstSubmenu.slideDown();
-        firstSubmenu.parent().addClass('open');
-        firstSubmenu.prev('.link').find('img').addClass('active');
-      }
-    };
-
-    Accordion2.prototype.dropdown = function (e) {
-      var $el = e.data.el;
+// Accordion
+$(document).ready(function () {
+    // Function to handle accordion behavior
+    function toggleAccordion() {
       var $this = $(this);
-      var $submenu = $this.next('.submenu');
+      var submenu = $this.next('.submenu');
 
-      $submenu.slideToggle();
-      $this.parent().toggleClass('open');
-      $this.find('img').toggleClass('active');
-
-      if (!e.data.multiple) {
-        // Close other submenus and remove 'active' class from their images
-        var $siblings = $this.parent().siblings();
-        $siblings.removeClass('open');
-        $siblings.find('.submenu').slideUp();
-        $siblings.find('img').removeClass('active');
-      }
-    };
-
-    var accordion2 = new Accordion2($('#accordion'), false);
-
-    // Function to handle footer positioning when submenus extend past the container
-    function adjustFooterPosition() {
-      var containerHeight = $('.container2').outerHeight();
-      var windowHeight = $(window).height();
-      var footerHeight = $('.footer').outerHeight();
-
-      if (containerHeight > windowHeight - footerHeight) {
-        $('.footer').css('position', 'static');
+      if (submenu.is(':visible')) {
+        submenu.slideUp();
+        $this.removeClass('open');
       } else {
-        $('.footer').css('position', 'fixed');
+        $('.submenu').slideUp();
+        $('.link').removeClass('open');
+        submenu.slideDown();
+        $this.addClass('open');
       }
     }
 
-    // Call the adjustFooterPosition function on page load and when the window is resized
-    adjustFooterPosition();
-    $(window).resize(adjustFooterPosition);
+    // Attach click event to accordion links
+    $('.link').on('click', toggleAccordion);
+
+    // Check if the device is mobile and adjust accordion behavior accordingly
+    function adjustAccordionOnResize() {
+      var isMobile = window.matchMedia('(max-width: 767px)').matches;
+      if (isMobile) {
+        $('.submenu').hide();
+        $('.link').removeClass('open');
+      } else {
+        $('.submenu').first().show();
+        $('.link').first().addClass('open');
+      }
+    }
+
+    // Initialize accordion on page load and when the window is resized
+    adjustAccordionOnResize();
+    $(window).resize(adjustAccordionOnResize);
   });
 </script>
 
