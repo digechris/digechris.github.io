@@ -327,7 +327,7 @@
     color: #05d694;
   }
 
-  /* Mobile-specific styles for phones (max-width: 500px) */
+/* Mobile-specific styles for phones (max-width: 500px) */
 @media (max-width: 500px) {
   /* Reset padding and margin for the body, html, and other elements */
   body, html, div, ul, li, a {
@@ -348,8 +348,8 @@
   }
 
   .footer-menu ul {
-    display: flex; /* Make the menu items stack horizontally */
-    justify-content: center; /* Center the menu items horizontally */
+    /* Change to block to stack menu items vertically on mobile */
+    display: block;
     padding: 0; /* Remove padding to fill the whole footer menu */
     list-style: none; /* Remove the default list style */
     margin: 0; /* Remove any margin to eliminate white space */
@@ -357,9 +357,10 @@
 
   .footer-menu ul li {
     display: inline-block; /* Make the menu items stack horizontally */
-    padding-right: 10px;
-    flex: 1; /* Allow the links to take equal space and fill the container */
+    /* padding-right: 10px;
+    padding-left: 10px; */
     text-align: center; /* Center the text within each link */
+    margin: 0 auto; /* Center the menu items horizontally */
   }
 
   .footer-menu ul li a {
@@ -367,7 +368,7 @@
     text-decoration: none;
     padding: 10px; /* Add some padding for better touch target */
     display: block; /* Ensure the links take up the full width */
-    width: 100%; /* Ensure the links take up the full width */
+    font-size: 14px; /* Adjust the font size to make it slightly smaller */
   }
 
   .footer-menu ul li a:hover {
