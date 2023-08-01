@@ -1,3 +1,4 @@
+
 /* Mobile Navbar */
 @media screen and (max-width: 767px) {
   .custom-navbar {
@@ -15,12 +16,14 @@
     height: 100%;
   }
 
+/* Adjust the left position for the left links container */
   .navbar-left-links {
-    left: 10px; /* Adjust the left position for the left links container */
+    left: 10px; 
   }
 
+  /* Adjust the right position for the right links container */
   .navbar-right-links {
-    right: 10px; /* Adjust the right position for the right links container */
+    right: 10px; 
   }
 
   .navbar-nav {
@@ -34,18 +37,18 @@
     margin: 0 5px;
   }
 
+/* Adjust the font size for the links on mobile */
   .custom-navbar .nav-link {
-    font-size: 17px !important; /* Adjust the font size for the links on mobile */
+    font-size: 17px !important; 
     padding: 2px;
   }
 
+  /* Adjust the size of the headshot logo on mobile */
   .circle-image {
-    max-width: 5px; /* Adjust the size of the headshot logo on mobile */
-    display: block; /* Make sure the headshot logo is visible */
+    max-width: 5px; 
+    display: block; 
   }
 }
-
-
 
 /* Remaining Styles for Navbar */
 .custom-navbar {
@@ -89,7 +92,7 @@
 }
 
 
-    /*Hero Slider*/
+/*Hero Slider*/
     
 /* Fonts */
 @font-face {
@@ -99,7 +102,6 @@
   src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
 }
 
-/* Hero Slider */
 .hero-slider {
   width: 100%;
   height: 45vh;
@@ -327,59 +329,54 @@
     color: #05d694;
   }
 
-/* Mobile-specific styles for phones (max-width: 500px) */
+/* Mobile-specific footer styles for phones (max-width: 500px) */
 @media (max-width: 500px) {
-  /* Reset padding and margin for the body, html, and other elements */
   body, html, div, ul, li, a {
     padding: 0;
     margin: 0;
   }
 
   .footer {
-    /* Add more padding at the bottom of the entire footer */
     padding-bottom: 60px;
-    text-align: center; /* Center the menu items horizontally */
+    text-align: center;
     background-image: linear-gradient(#00573b 0%, black 100%, #00573b 0%);
   }
 
   .footer-menu {
-    text-align: center; /* Center the menu items horizontally */
-    padding: 0; /* Remove padding to fill the whole footer menu */
+    text-align: center;
+    padding: 0; 
   }
 
   .footer-menu ul {
     display: block;
-    padding: 0; /* Remove padding to fill the whole footer menu */
-    list-style: none; /* Remove the default list style */
-    margin: 0; /* Remove any margin to eliminate white space */
+    padding: 0; 
+    list-style: none; 
+    margin: 0; 
   }
 
   .footer-menu ul li {
-    display: inline-block; /* Make the menu items stack horizontally */
-    /* padding-right: 10px;
-    padding-left: 10px; */
-    text-align: center; /* Center the text within each link */
-    margin: 0 auto; /* Center the menu items horizontally */
+    display: inline-block;
+    text-align: center; 
+    margin: 0 auto; 
   }
 
   .footer-menu ul li a {
     color: #00573b;
     text-decoration: none;
-    padding: 10px; /* Add some padding for better touch target */
-    display: block; /* Ensure the links take up the full width */
-    font-size: 14px; /* Adjust the font size to make it slightly smaller */
+    padding: 10px; /* Padding for better touch target */
+    display: block; 
+    font-size: 14px; 
   }
 
   .footer-menu ul li a:hover {
     color: #05d694;
   }
 
-  /* Add more padding at the bottom of the footer content */
+  /* More padding at the bottom of the footer content */
   .footer-bottom {
     padding-bottom: 40px;
   }
 }
-
   
   /*Divider*/
   body { background: rgb(255, 255, 255); }
