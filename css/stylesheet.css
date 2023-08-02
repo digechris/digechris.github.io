@@ -423,4 +423,11 @@
             height: 75px;
           }
 
+          /* Mobile-specific styles for phones (max-width: 500px) */
+@media (max-width: 500px) {
+  .presentationimg {
+    height: 98%;
+    width: 98%;
+  }
+}
           
