@@ -112,26 +112,27 @@
   </div>
   <style>
     .flickity-page-dots {
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-    }
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 
-    .flickity-page-dots .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #fff;
-      border: 1px solid #00573b;
-      margin: 0 5px;
-    }
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #00573b;
+  margin: 0 5px;
+}
 
-    .flickity-page-dots .dot.is-selected {
-      background: #00573b;
-      border-color: #000;
-    }
-</style>
-
+.flickity-page-dots .dot.is-selected {
+  background: #00573b;
+  border-color: #000;
+}
+  </style>
 </div>
     </div>
   </header>
@@ -403,13 +404,13 @@ var flkty = new Flickity(carousel, {
       <ul class="submenu1" style="font-size: 15px;"><br>
         <p><u><b>Primary objective</b></u> – The main goal of our ServiceDesk is to provide IT support services for all Oldcastle APG employees. Help desk employees complete tickets that have been assigned to them, as well as, log and enter a ticket for anything IT support related that they completed. Through this goal we have seen a reduction in incidents within the company as a whole and have cut down on IT related issues.
           <br></br>
-          <u><b>Experience</b></u> – Having never used or even heard of Snow, I took some beginner courses. Through this, I gained the ability to navigate within Snow and some confidence in my ability within the environment. With great mentors, I learned how to handle tickets, appropriate protocols, set up new employee workstations, and many different tips on how to handle the IT support side of Oldcastle APG. It was great and insightful to see how far an IT helpdesk has come.
+          <u><b>Experience</b></u> – Having never used or even heard of SNOW, I took some beginner courses. Through this, I gained the ability to navigate within SNOW and some confidence in my ability within the environment. With great mentors, I learned how to handle tickets, appropriate protocols, set up new employee workstations, and many different tips on how to handle the IT support side of Oldcastle APG. It was great and insightful to see how far an IT helpdesk has come.
           <br></br>
           <u><b>Pictures</b></u>
           <br></br>
-          <img src="./assets/images/presentation/SnowDashboards.PNG" width="545" height="370">
+          <img src="./assets/images/presentation/SNOWDashboards.PNG" width="545" height="370">
           <br></br>
-          <img src="./assets/images/presentation/SnowIncidents.PNG" width="537.9" height="290.4">
+          <img src="./assets/images/presentation/SNOWIncidents.PNG" width="537.9" height="290.4">
           <br></br>
           <u><b>Shoutouts</b></u> – Tammy, Nicole, David<br>
           <img src="assets/images/presentation/tammy.png">
@@ -425,13 +426,13 @@ var flkty = new Flickity(carousel, {
         <p><b>ServiceNow</b></p>
       </div>
       <ul class="submenu1" style="font-size: 15px;"><br>
-        <p><b><u>Primary objective</u></b> – Overarching support system for Oldcastle APG IT support employees. Provides the ability to efficiently track and serve employees with IT problems. Stores and visualizes data in a way that we can reduce issues and monitor performance of the department. The development of snow is to better provide the tools necessary for IT ServiceDesk employees to be able to do their job effectively. One example of this is the implementation of the Knowledge Base (KB) Articles. The knowledge base that saves and facilitates information about how to solve different IT support problems. This aspect is growing and it is cool to see it gradually become a vital resource.
+        <p><b><u>Primary objective</u></b> – Overarching support system for Oldcastle APG IT support employees. Provides the ability to efficiently track and serve employees with IT problems. Stores and visualizes data in a way that we can reduce issues and monitor performance of the department. The development of SNOW is to better provide the tools necessary for IT ServiceDesk employees to be able to do their job effectively. One example of this is the implementation of the Knowledge Base (KB) Articles. The knowledge base that saves and facilitates information about how to solve different IT support problems. This aspect is growing and it is cool to see it gradually become a vital resource.
           <br></br>
           <b><u>Experience</u></b> – Worked briefly with Katherine to do some User-Acceptance-Testing (UAT). Her teams task is the development of ServiceNow. Unfortunately didn’t get to do too much testing but it was a great experience to see the QA side of the development of ServiceNow. Also learned Raymond's role and how he manages the tickets that come in and keeps his team on top of them. The dashboards and metrics that he uses to maintain the high quality we have was an eye-opener.
           <br></br>
           <b><u>Pictures</u></b>
           <br></br>
-          <img src="./assets/images/presentation/SnowUAT.PNG" width="554.4" height="289.2">
+          <img src="./assets/images/presentation/SNOWUAT.PNG" width="554.4" height="289.2">
           <br></br>
           <b><u>Areas of Improvement</u></b> – ServiceNow is on the right track, however, some small improvement measures would be a great touch. The help desk location on the employee website homepage should be made with ease-of-use in mind. I ran into a quite a few employees who had no idea how to enter a ticket or where the help desk link even was. This can slow down support services and makes the jobs of Tammy/David more difficult as they are often relied upon as employees will forgo using the service and instead rely on them. Make the help desk site easier to get too and provide sufficient employee training on how to submit a ticket and how to track your ticket. The suggestions I've heard to help prevent this are training during onboarding that shows how to do this. Maybe a short video, knowledge base printed out on paper, or many other solutions.
           <br></br>
@@ -449,7 +450,7 @@ var flkty = new Flickity(carousel, {
         <p><b>Asset Management</b></p>
       </div>
       <ul class="submenu1" style="font-size: 15px;"><br>
-        <p><b><u>Primary objective</u></b> – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware assets tracked within snow.
+        <p><b><u>Primary objective</u></b> – Keep track of the hardware assets of Oldcastle. The goal at the moment was to track the laptops and tablets then transition to eventually having all hardware assets tracked within SNOW.
           <br></br>
           <b><u>Experience</u></b> – Whenever I had some free time Nicole had me work with Matt’s team in Asset Management. We would go through and verify System Center Configuration Manager (SCCM) data and match it up with the user. Then transfer this information over to the new procurement sheet. Once everything was confirmed, I would input tags into SNOW and assign a new hardware asset (Make, Model, etc.) to that specific user. <b><u>This may seem simple, but up until now there have been a large portion of errors (Assigned to, Location, and Model Numbers) along with very minimal tracking.</u></b> It was a great experience to see how we can better track and verify where all of our hardware assets are.
           <br></br>
@@ -461,8 +462,8 @@ var flkty = new Flickity(carousel, {
           <img src="./assets/images/presentation/Locations.PNG" width="691.35" height="67.1"><br></br>
           <b><u>Hardware Assets:</b></u><br></br>
           <img src="./assets/images/presentation/hardwareassetsoverview.PNG" width="514.8" height="276.1"><br></br>
-          <b><u>My Snow Inputs:</b></u><br></br>
-          <img src="./assets/images/presentation/Snowinputactual.PNG" width="514.8" height="276.1"><br></br>
+          <b><u>My SNOW Inputs:</b></u><br></br>
+          <img src="./assets/images/presentation/SNOWinputactual.PNG" width="514.8" height="276.1"><br></br>
           <br></br>
           <b><u>Areas of Improvement</u></b> – Sometimes the wrong information is in SCCM. Locations spreadsheet is very difficult to read considering we have so many locations and sites. When it comes to tracking assets, <b><u>it is important to effectively track employee roles, locations, titles, etc.</u></b>
           <br></br>
